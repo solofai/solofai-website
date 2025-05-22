@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Homepage.css';
 
 const Homepage = () => {
+  const navigate = useNavigate();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [scrollY, setScrollY] = useState(0);
+
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -44,7 +50,7 @@ const Homepage = () => {
           <h1 className="hero-title">
             <span className="sun-text">Sol</span> of AI
           </h1>
-          <p className="hero-subtitle">Where Sunshyne Meets Silicon</p>
+          <p className="hero-subtitle">Where Sol Meets Silicon</p>
           <p className="hero-description">
             Machine Learning Engineer • AI Researcher • Digital Creator
           </p>
@@ -62,28 +68,31 @@ const Homepage = () => {
       {/* About Section */}
       <section className="about" style={{ transform: `translateY(${scrollY * -0.1}px)` }}>
         <div className="container">
-          <h2 className="section-title">The Journey of Sunshyne</h2>
+          <h2 className="section-title">The Journey of Sol</h2>
           <div className="about-grid">
-            <div className="about-card">
+            <div className="about-card clickable" onClick={() => handleNavigation('/academic')}>
               <div className="icon-wrapper">
                 <div className="icon">🎓</div>
               </div>
               <h3>Academic Foundation</h3>
               <p>Double BS in Physics & Applied Computational Mathematics, MS in Biomedical Forensic Science, MS in Computer Science</p>
+              <div className="card-arrow">→</div>
             </div>
-            <div className="about-card">
+            <div className="about-card clickable" onClick={() => handleNavigation('/engineering')}>
               <div className="icon-wrapper">
                 <div className="icon">🔒</div>
               </div>
-              <h3>Cyber Security Expert</h3>
-              <p>Specializing in hardware security and assurance, protecting critical infrastructure with cutting-edge ML techniques</p>
+              <h3>Machine Learning Engineer</h3>
+              <p>Specializing in cyber hardware security and assurance, developing advanced ML models for critical infrastructure protection</p>
+              <div className="card-arrow">→</div>
             </div>
-            <div className="about-card">
+            <div className="about-card clickable" onClick={() => handleNavigation('/research')}>
               <div className="icon-wrapper">
                 <div className="icon">🧬</div>
               </div>
               <h3>Biometrics Research</h3>
               <p>Leading innovative research in biometric applications for data science and AI</p>
+              <div className="card-arrow">→</div>
             </div>
           </div>
         </div>
@@ -142,16 +151,16 @@ const Homepage = () => {
       {/* Contact */}
       <section className="contact">
         <div className="container">
-          <h2 className="section-title">Connect with the Sun</h2>
+          <h2 className="section-title">Connect with Sol</h2>
           <p className="contact-subtitle">Let's create something brilliant together</p>
           <div className="contact-buttons">
             <a href="mailto:sol@solofai.com" className="contact-btn">
               <span>Email</span>
             </a>
-            <a href="#" className="contact-btn">
+            <a href="https://www.linkedin.com/in/lori-pickering-b46841155/" target="_blank" rel="noopener noreferrer" className="contact-btn">
               <span>LinkedIn</span>
             </a>
-            <a href="#" className="contact-btn">
+            <a href="https://github.com/solofai" target="_blank" rel="noopener noreferrer" className="contact-btn">
               <span>GitHub</span>
             </a>
           </div>
