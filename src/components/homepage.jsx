@@ -40,6 +40,20 @@ const Homepage = () => {
 
   return (
     <div className="homepage">
+      {/* Navigation Bar */}
+      <nav className="nav-bar">
+        <div className="nav-container">
+          <a href="/" className="nav-logo">Sol of AI</a>
+          <div className="nav-links">
+            <a href="/" className="nav-link">Home</a>
+            <a href="/academic" className="nav-link">Academic</a>
+            <a href="/engineering" className="nav-link">ML Engineering</a>
+            <a href="/research" className="nav-link">Research</a>
+            <a href="/contact" className="nav-link">Contact</a>
+          </div>
+        </div>
+      </nav>
+
       {/* Hero Section with Animated Sun */}
       <section className="hero">
         <div className="sun-container">
@@ -106,46 +120,6 @@ const Homepage = () => {
               <h3>Biometrics Research</h3>
               <p>Leading innovative research in biometric applications for data science and AI</p>
               <div className="card-arrow">→</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Skills & Tech */}
-      <section className="skills">
-        <div className="container">
-          <h2 className="section-title">Technologies I Illuminate</h2>
-          <div className="tech-universe" style={{
-            transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`
-          }}>
-            <div className="tech-orbit">
-              <div className="orbit-center">
-                <span>ML/AI</span>
-              </div>
-              {/* Inner ring - Core ML technologies */}
-              {['PyTorch', 'TensorFlow', 'PyG', 'OpenCV'].map((tech, i) => (
-                <div 
-                  key={tech} 
-                  className="orbit-item inner-ring" 
-                  style={{ 
-                    transform: `rotate(${i * 90}deg) translateX(250px) rotate(-${i * 90}deg)`
-                  }}
-                >
-                  {tech}
-                </div>
-              ))}
-              {/* Outer ring - Supporting technologies */}
-              {['Python', 'NumPy', 'Pandas', 'Polars', 'MATLAB', 'Linux', 'Docker', 'Git', 'Bash', 'YOLO'].map((tech, i) => (
-                <div 
-                  key={tech} 
-                  className="orbit-item outer-ring" 
-                  style={{ 
-                    transform: `rotate(${i * 36}deg) translateX(380px) rotate(-${i * 36}deg)`
-                  }}
-                >
-                  {tech}
-                </div>
-              ))}
             </div>
           </div>
         </div>

@@ -4,6 +4,7 @@ import Homepage from './components/Homepage';
 import AcademicFoundation from './components/AcademicFoundation';
 import MLEngineering from './components/MLEngineering';
 import BiometricsResearch from './components/BiometricsResearch';
+import Contact from './components/Contact';
 import './App.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path="/academic" element={<AcademicFoundation />} />
         <Route path="/engineering" element={<MLEngineering />} />
         <Route path="/research" element={<BiometricsResearch />} />
+        <Route path="/contact" element={<Contact />} />
         {/* Add more routes as we create pages */}
       </Routes>
     </Router>
