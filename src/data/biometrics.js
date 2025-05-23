@@ -5,7 +5,7 @@ export const biometricsResearch = {
   description: 'Advancing authentication and security through biometric technologies',
   project: 'Keystroke Dynamics & Fake Profile Detection',
   team: 'Research Team at Drexel University',
-  github: 'https://github.com/DomGarguilo/KeystrokeAuthentication',
+  github: 'https://github.com/FakeProfileDetection',
   focus: [
     'Keystroke Dynamics Analysis for User Authentication',
     'Machine Learning Models for Behavioral Biometrics',

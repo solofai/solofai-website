@@ -170,6 +170,20 @@
   display: grid;
   gap: 1.5rem;
 }
+/* ——— New: Previous Experience Section ——— */
+.previous-experience {
+  padding: 4rem 0;
+  background: var(--cosmic-black);
+}
+
+.previous-experience h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--sun-gold);
+  border-bottom: 2px solid var(--sun-gold);
+  padding-bottom: 0.5rem;
+}
 
 .detail-item {
   display: flex;

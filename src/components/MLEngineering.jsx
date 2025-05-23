@@ -59,6 +59,51 @@ const MLEngineering = () => {
         </div>
       </section>
 
+      {/* Previous Experience Section */}
+    <section className="previous-experience">
+    <div className="container">
+        <h2>Previous Experience</h2>
+        {mlEngineering.previous.map((exp, idx) => (
+        <div key={idx} className="role-card">
+            <h3>{exp.role}</h3>
+            <div className="role-details">
+            <div className="detail-item">
+                <span className="detail-label">Company:</span>
+                <span className="detail-value">
+                {exp.company}
+                {exp.website && (() => {
+                    const href = exp.website.match(/^https?:\/\//)
+                    ? exp.website
+                    : `https://${exp.website}`;
+                    return (
+                    <a
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="company-link"
+                    >
+                        ↗
+                    </a>
+                    );
+                })()}
+                </span>
+            </div>
+            <div className="detail-item">
+                <span className="detail-label">Location:</span>
+                <span className="detail-value">{exp.location}</span>
+            </div>
+            <div className="detail-item">
+                <span className="detail-label">Duration:</span>
+                <span className="detail-value">{exp.duration}</span>
+            </div>
+            </div>
+        </div>
+        ))}
+    </div>
+    </section>
+
+      
+
       {/* Responsibilities Section */}
       <section className="responsibilities-section">
         <div className="container">
