@@ -373,6 +373,10 @@
     display: none;
   }
   
+  .nav-bar {
+    display: none !important;
+  }
+  
   .responsibilities-grid {
     grid-template-columns: 1fr;
   }

@@ -8,39 +8,68 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* hide mobile header by default—only show on small screens */
+/* === Mobile Header & Drawer (always visible) === */
 .mobile-header {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--cosmic-black);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1001;
 }
 
-/* show on screens ≤768px */
-@media (max-width: 768px) {
-  .mobile-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-    background: var(--cosmic-black);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  .hamburger {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: var(--star-white);
-    padding: 0;
-    margin: 0;
-  }
-  .mobile-logo {
-    color: var(--star-white);
-    text-decoration: none;
-    font-size: 1.25rem;
-    font-weight: bold;
-  }
-  /* optionally hide the desktop nav-bar on mobile: */
+.hamburger {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--star-white);
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.mobile-logo {
+  color: var(--star-white);
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* slide-down menu under the header */
+.mobile-nav-drawer {
+  position: fixed;
+  top: calc(1rem + 1.5rem + 1rem); /* header padding + font-size + padding */
+  left: 0;
+  right: 0;
+  background: var(--cosmic-black);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+.mobile-nav-drawer a {
+  padding: 1rem;
+  color: var(--star-white);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.2s ease;
+}
+.mobile-nav-drawer a:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* === Desktop nav-bar is shown by default here === */
+/* No rules needed — your existing .nav-bar styles remain active */
+
+/* === Hide desktop nav-bar on true mobile/touch devices only === */
+@media (max-width: 768px) and (hover: none) and (pointer: coarse) {
   .nav-bar {
-    display: none;
+    display: none !important;
   }
 }
+

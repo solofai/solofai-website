@@ -389,6 +389,9 @@
   .nav-links {
     display: none;
   }
+  .nav-bar {
+    display: none !important;
+  }
   
   .focus-grid {
     grid-template-columns: 1fr;

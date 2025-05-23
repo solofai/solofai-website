@@ -297,7 +297,11 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
+  .nav-bar {
+    display: none !important;
+  }
+{
   .nav-links {
     display: none;
   }
@@ -312,5 +316,13 @@
   
   .timeline-marker {
     left: 12px;
+  }
+} */
+
+@media (max-width: 768px) 
+  and (hover: none)      /* no hover = touch device */
+  and (pointer: coarse)  /* coarse pointer = finger */ {
+  .nav-bar {
+    display: none !important;
   }
 }
