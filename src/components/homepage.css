@@ -130,19 +130,20 @@ body {
 
 .hero-subtitle {
   font-size: 1.8rem;
-  background: linear-gradient(45deg, #FFE5B4, #FFF8DC);
+  background: linear-gradient(45deg, #D4A574, #E6D5AA);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 0.5rem;
-  font-weight: 300;
-  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
+  font-weight: 400;
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.7));
 }
 
 .hero-description {
   font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.95);
   margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* CTA Buttons */
@@ -306,14 +307,23 @@ body {
 .skills {
   padding: 5rem 0;
   background: var(--cosmic-black);
+  overflow: hidden;
+}
+
+.tech-universe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 900px;
+  transition: transform 0.3s ease-out;
 }
 
 .tech-orbit {
-  width: 400px;
-  height: 400px;
+  width: 900px;
+  height: 900px;
   margin: 0 auto;
   position: relative;
-  animation: rotate 30s linear infinite reverse;
+  animation: rotate 60s linear infinite reverse;
 }
 
 .orbit-center {
@@ -321,32 +331,105 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100px;
-  height: 100px;
-  background: radial-gradient(circle, var(--sun-gold), var(--sun-orange));
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, var(--sun-gold) 0%, var(--sun-orange) 60%, var(--sun-coral) 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
   color: var(--cosmic-black);
-  box-shadow: 0 0 50px var(--sun-gold);
+  box-shadow: 
+    0 0 80px var(--sun-gold),
+    0 0 120px var(--sun-orange),
+    inset 0 0 40px rgba(255, 255, 255, 0.2);
+  z-index: 5;
+  font-size: 1.8rem;
+  animation: pulse 4s ease-in-out infinite;
 }
 
 .orbit-item {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 80px;
-  height: 80px;
-  margin: -40px 0 0 -40px;
-  background: rgba(255, 255, 255, 0.1);
+  width: 90px;
+  height: 90px;
+  margin: -45px 0 0 -45px;
+  background: rgba(5, 5, 5, 0.9);
   border: 2px solid var(--sun-gold);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: rotate 30s linear infinite;
+  animation: rotate 60s linear infinite;
+  color: var(--star-white);
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  text-align: center;
+  padding: 0.5rem;
+  z-index: 10;
+}
+
+.orbit-item:hover {
+  transform: scale(1.3);
+  background: var(--sun-gold);
+  color: var(--cosmic-black);
+  z-index: 20;
+  box-shadow: 0 0 30px var(--sun-gold);
+}
+
+/* Different styles for inner and outer rings */
+.orbit-item.inner-ring {
+  background: rgba(255, 215, 0, 0.15);
+  border-color: var(--sun-gold);
+  border-width: 3px;
+  font-size: 1rem;
+  width: 100px;
+  height: 100px;
+  margin: -50px 0 0 -50px;
+  animation-duration: 45s;
+  z-index: 12;
+}
+
+.orbit-item.outer-ring {
+  background: rgba(5, 5, 5, 0.95);
+  border-color: rgba(255, 215, 0, 0.6);
+  font-size: 0.85rem;
+  width: 80px;
+  height: 80px;
+  margin: -40px 0 0 -40px;
+  animation-duration: 75s;
+  animation-direction: reverse;
+  z-index: 11;
+}
+
+.orbit-item.inner-ring:hover {
+  background: var(--sun-gold);
+  color: var(--cosmic-black);
+  box-shadow: 0 0 40px var(--sun-gold);
+}
+
+.orbit-item.outer-ring:hover {
+  background: var(--sun-orange);
+  color: var(--cosmic-black);
+  border-color: var(--sun-orange);
+  box-shadow: 0 0 40px var(--sun-orange);
+}
+
+.orbit-item.inner-ring:hover {
+  background: var(--sun-gold);
+  color: var(--cosmic-black);
+  box-shadow: 0 0 30px var(--sun-gold);
+}
+
+.orbit-item.outer-ring:hover {
+  background: var(--sun-orange);
+  color: var(--cosmic-black);
+  border-color: var(--sun-orange);
+  box-shadow: 0 0 30px var(--sun-orange);
 }
 
 /* Projects Section */
@@ -369,6 +452,10 @@ body {
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
+}
+
+.project-card.clickable {
+  cursor: pointer;
 }
 
 .project-glow {
@@ -404,6 +491,15 @@ body {
   border-radius: 20px;
   font-size: 0.9rem;
   margin-top: 1rem;
+}
+
+.coming-soon {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
 }
 
 /* Contact Section */
@@ -460,15 +556,205 @@ body {
     height: 200px;
   }
   
+  .tech-universe {
+    min-height: 600px;
+  }
+  
   .tech-orbit {
-    width: 300px;
-    height: 300px;
+    width: 600px;
+    height: 600px;
+    transform: scale(0.5);
+  }
+  
+  .orbit-center {
+    width: 120px;
+    height: 120px;
+    font-size: 1.3rem;
   }
   
   .orbit-item {
-    width: 60px;
-    height: 60px;
-    margin: -30px 0 0 -30px;
-    font-size: 0.8rem;
+    width: 70px;
+    height: 70px;
+    margin: -35px 0 0 -35px;
+    font-size: 0.7rem;
   }
+  
+  .orbit-item.inner-ring {
+    width: 80px;
+    height: 80px;
+    margin: -40px 0 0 -40px;
+  }
+  
+  .orbit-item.outer-ring {
+    width: 65px;
+    height: 65px;
+    margin: -32.5px 0 0 -32.5px;
+  }
+}
+
+/* Different styles for inner and outer rings */
+.orbit-item.inner-ring {
+  background: rgba(255, 215, 0, 0.1);
+  border-color: var(--sun-gold);
+  font-size: 0.9rem;
+}
+
+.orbit-item.outer-ring {
+  background: rgba(5, 5, 5, 0.9);
+  border-color: rgba(255, 215, 0, 0.6);
+  font-size: 0.8rem;
+  width: 65px;
+  height: 65px;
+  margin: -32.5px 0 0 -32.5px;
+}
+
+.orbit-item.inner-ring:hover {
+  background: var(--sun-gold);
+  color: var(--cosmic-black);
+  box-shadow: 0 0 20px var(--sun-gold);
+}
+
+.orbit-item.outer-ring:hover {
+  background: var(--sun-orange);
+  color: var(--cosmic-black);
+  border-color: var(--sun-orange);
+  box-shadow: 0 0 20px var(--sun-orange);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background: var(--midnight-blue);
+  border: 2px solid var(--sun-gold);
+  border-radius: 20px;
+  padding: 3rem;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: var(--sun-gold);
+  font-size: 2rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  background: rgba(255, 215, 0, 0.1);
+  transform: rotate(90deg);
+}
+
+.modal-icon {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.modal-content h2 {
+  color: var(--sun-gold);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.modal-content p {
+  color: var(--star-white);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.modal-details {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.modal-details h3 {
+  color: var(--sun-gold);
+  margin-bottom: 1rem;
+}
+
+.modal-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.modal-details li {
+  padding: 0.5rem 0;
+  padding-left: 2rem;
+  position: relative;
+  color: var(--star-white);
+}
+
+.modal-details li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--sun-gold);
+}
+
+.modal-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.modal-cta a {
+  color: var(--sun-gold);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.modal-cta a:hover {
+  border-bottom-color: var(--sun-gold);
 }

@@ -6,9 +6,18 @@ const Homepage = () => {
   const navigate = useNavigate();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [scrollY, setScrollY] = useState(0);
+  const [showModal, setShowModal] = useState(false);
 
   const handleNavigation = (path) => {
     navigate(path);
+  };
+
+  const handlePrivateProject = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   useEffect(() => {
@@ -55,8 +64,12 @@ const Homepage = () => {
             Machine Learning Engineer • AI Researcher • Digital Creator
           </p>
           <div className="hero-cta">
-            <button className="cta-primary">Explore My Work</button>
-            <button className="cta-secondary">View Research</button>
+            <button className="cta-primary" onClick={() => handleNavigation('/engineering')}>
+              Explore My Work
+            </button>
+            <button className="cta-secondary" onClick={() => handleNavigation('/research')}>
+              View Research
+            </button>
           </div>
         </div>
 
@@ -102,21 +115,38 @@ const Homepage = () => {
       <section className="skills">
         <div className="container">
           <h2 className="section-title">Technologies I Illuminate</h2>
-          <div className="tech-orbit">
-            <div className="orbit-center">
-              <span>ML/AI</span>
-            </div>
-            {['Python', 'PyTorch', 'PyG', 'Polars', 'C++', 'Java', 'Cloud'].map((tech, i) => (
-              <div 
-                key={tech} 
-                className="orbit-item" 
-                style={{ 
-                  transform: `rotate(${i * 51.4}deg) translateX(150px) rotate(-${i * 51.4}deg)`
-                }}
-              >
-                {tech}
+          <div className="tech-universe" style={{
+            transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`
+          }}>
+            <div className="tech-orbit">
+              <div className="orbit-center">
+                <span>ML/AI</span>
               </div>
-            ))}
+              {/* Inner ring - Core ML technologies */}
+              {['PyTorch', 'TensorFlow', 'PyG', 'OpenCV'].map((tech, i) => (
+                <div 
+                  key={tech} 
+                  className="orbit-item inner-ring" 
+                  style={{ 
+                    transform: `rotate(${i * 90}deg) translateX(250px) rotate(-${i * 90}deg)`
+                  }}
+                >
+                  {tech}
+                </div>
+              ))}
+              {/* Outer ring - Supporting technologies */}
+              {['Python', 'NumPy', 'Pandas', 'Polars', 'MATLAB', 'Linux', 'Docker', 'Git', 'Bash', 'YOLO'].map((tech, i) => (
+                <div 
+                  key={tech} 
+                  className="orbit-item outer-ring" 
+                  style={{ 
+                    transform: `rotate(${i * 36}deg) translateX(380px) rotate(-${i * 36}deg)`
+                  }}
+                >
+                  {tech}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -126,27 +156,57 @@ const Homepage = () => {
         <div className="container">
           <h2 className="section-title">Rays of Innovation</h2>
           <div className="projects-grid">
-            <div className="project-card">
+            <div className="project-card clickable" onClick={() => handleNavigation('/engineering')}>
               <div className="project-glow"></div>
               <h3>Cyber Hardware Security</h3>
-              <p>Developing ML models for advanced threat detection in hardware systems</p>
+              <p>Developing ML models for hardware analysis and threat detection</p>
               <span className="project-tag">Machine Learning</span>
+              <div className="card-arrow">→</div>
             </div>
-            <div className="project-card">
+            <div className="project-card clickable" onClick={() => handleNavigation('/research')}>
               <div className="project-glow"></div>
-              <h3>Biometric Research</h3>
-              <p>Pioneering new approaches in biometric data analysis and AI applications</p>
+              <h3>Biometric Authentication</h3>
+              <p>Researching keystroke dynamics and fake profile detection</p>
               <span className="project-tag">Research</span>
+              <div className="card-arrow">→</div>
             </div>
-            <div className="project-card">
+            <div className="project-card" onClick={handlePrivateProject}>
               <div className="project-glow"></div>
               <h3>Radiation Safety Training</h3>
-              <p>Building an educational platform for radiation safety certification</p>
-              <span className="project-tag">Web Development</span>
+              <p>Developing an educational platform for radiation safety certification</p>
+              <span className="project-tag">In Development</span>
+              <div className="coming-soon">Private Repository</div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Modal for Private Repository */}
+      {showModal && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={closeModal}>×</button>
+            <div className="modal-icon">🔒</div>
+            <h2>Project Under Development</h2>
+            <p>
+              The Radiation Safety Training platform is currently in active development. 
+              This repository is private to protect proprietary content and course materials.
+            </p>
+            <div className="modal-details">
+              <h3>Project Overview:</h3>
+              <ul>
+                <li>Web-based radiation safety certification course</li>
+                <li>Interactive learning modules and assessments</li>
+                <li>Collaboration with subject matter experts</li>
+                <li>Expected public release: TBD</li>
+              </ul>
+            </div>
+            <p className="modal-cta">
+              Interested in learning more? Feel free to <a href="/contact">contact me</a> for additional information.
+            </p>
+          </div>
+        </div>
+      )}
 
       {/* Contact */}
       <section className="contact">
