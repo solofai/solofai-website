@@ -44,6 +44,20 @@ function App() {
         <Route path="/research" element={<BiometricsResearch />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+
+    {/* ─────── FOOTER ─────── */}
+    <footer className="app-footer">
+      <div className="footer-container">
+        <p className="footer-updated">
+          Last updated: May 23, 2025
+        </p>
+        <p className="footer-credit">
+          © 2025 Sol of AI • 
+          <a href="mailto:sol@solofai.com">sol@solofai.com</a>
+        </p>
+      </div>
+    </footer>
+
     </Router>
   );
 }
