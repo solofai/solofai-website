@@ -1,8 +1,14 @@
+// src/components/MLEngineering.jsx
 import React from 'react';
 import { mlEngineering } from '../data/machinelearning';
 import './MLEngineering.css';
 
 const MLEngineering = () => {
+    // Combine current and previous experience technologies
+    const allTechs = [
+        ...mlEngineering.technologies,
+        ...mlEngineering.previous.flatMap(exp => exp.technologies)
+    ];
   return (
     <div className="ml-page">
       {/* Navigation Bar */}
@@ -39,11 +45,21 @@ const MLEngineering = () => {
                 <span className="detail-label">Company:</span>
                 <span className="detail-value">
                   {mlEngineering.company}
-                  {mlEngineering.website && (
-                    <a href={`https://${mlEngineering.website}`} target="_blank" rel="noopener noreferrer" className="company-link">
-                      ↗
-                    </a>
-                  )}
+                  {mlEngineering.website && (() => {
+                    const href = mlEngineering.website.match(/^https?:\/\//)
+                      ? mlEngineering.website
+                      : `https://${mlEngineering.website}`;
+                    return (
+                      <a
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="company-link"
+                      >
+                        ↗
+                      </a>
+                    );
+                  })()}
                 </span>
               </div>
               <div className="detail-item">
@@ -54,73 +70,69 @@ const MLEngineering = () => {
                 <span className="detail-label">Duration:</span>
                 <span className="detail-value">{mlEngineering.duration}</span>
               </div>
+              {mlEngineering.responsibilities.map((resp, i) => (
+                <div key={i} className="detail-item">
+                  <span className="detail-label">Responsibility:</span>
+                  <span className="detail-value">{resp}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* Previous Experience Section */}
-    <section className="previous-experience">
-    <div className="container">
-        <h2>Previous Experience</h2>
-        {mlEngineering.previous.map((exp, idx) => (
-        <div key={idx} className="role-card">
-            <h3>{exp.role}</h3>
-            <div className="role-details">
-            <div className="detail-item">
-                <span className="detail-label">Company:</span>
-                <span className="detail-value">
-                {exp.company}
-                {exp.website && (() => {
-                    const href = exp.website.match(/^https?:\/\//)
-                    ? exp.website
-                    : `https://${exp.website}`;
-                    return (
-                    <a
-                        href={href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="company-link"
-                    >
-                        ↗
-                    </a>
-                    );
-                })()}
-                </span>
-            </div>
-            <div className="detail-item">
-                <span className="detail-label">Location:</span>
-                <span className="detail-value">{exp.location}</span>
-            </div>
-            <div className="detail-item">
-                <span className="detail-label">Duration:</span>
-                <span className="detail-value">{exp.duration}</span>
-            </div>
-            </div>
-        </div>
-        ))}
-    </div>
-    </section>
-
-      
-
-      {/* Responsibilities Section */}
-      <section className="responsibilities-section">
+      <section className="previous-experience">
         <div className="container">
-          <h2>Key Responsibilities</h2>
-          <div className="responsibilities-grid">
-            {mlEngineering.responsibilities.map((resp, index) => (
-              <div key={index} className="responsibility-card">
-                <div className="resp-number">{index + 1}</div>
-                <p>{resp}</p>
+          <h2>Previous Experience</h2>
+          {mlEngineering.previous.map((exp, idx) => (
+            <div key={idx} className="role-card">
+              <h3>{exp.role}</h3>
+              <div className="role-details">
+                <div className="detail-item">
+                  <span className="detail-label">Company:</span>
+                  <span className="detail-value">
+                    {exp.company}
+                    {exp.website && (() => {
+                      const href = exp.website.match(/^https?:\/\//)
+                        ? exp.website
+                        : `https://${exp.website}`;
+                      return (
+                        <a
+                          href={href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="company-link"
+                        >
+                          ↗
+                        </a>
+                      );
+                    })()}
+                  </span>
+                </div>
+                <div className="detail-item">
+                  <span className="detail-label">Location:</span>
+                  <span className="detail-value">{exp.location}</span>
+                </div>
+                <div className="detail-item">
+                  <span className="detail-label">Duration:</span>
+                  <span className="detail-value">{exp.duration}</span>
+                </div>
+                {exp.responsibilities.map((resp, j) => (
+                  <div key={j} className="detail-item">
+                    <span className="detail-label">Responsibility:</span>
+                    <span className="detail-value">{resp}</span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Technologies Section */}
-      <section className="tech-section">
+
+      {/* <section className="tech-section">
         <div className="container">
           <h2>Technologies & Tools</h2>
           <div className="tech-grid">
@@ -131,8 +143,21 @@ const MLEngineering = () => {
             ))}
           </div>
         </div>
-      </section>
-
+      </section> */}
+        {/* Technologies & Tools Section */}
+            <section className="tech-section">
+                <div className="container">
+                <h2>Technologies & Tools</h2>
+                <div className="tech-grid">
+                    {allTechs.map((tech, index) => (
+                    <div key={index} className="tech-item">
+                        <span className="tech-name">{tech}</span>
+                    </div>
+                    ))}
+                </div>
+                </div>
+            </section>
+            
       {/* Back to Home Button */}
       <div className="back-home">
         <a href="/" className="back-button">

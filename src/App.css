@@ -7,3 +7,40 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* hide mobile header by default—only show on small screens */
+.mobile-header {
+  display: none;
+}
+
+/* show on screens ≤768px */
+@media (max-width: 768px) {
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background: var(--cosmic-black);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .hamburger {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--star-white);
+    padding: 0;
+    margin: 0;
+  }
+  .mobile-logo {
+    color: var(--star-white);
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  /* optionally hide the desktop nav-bar on mobile: */
+  .nav-bar {
+    display: none;
+  }
+}
