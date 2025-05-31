@@ -96,6 +96,12 @@ page-hero {
   animation: float 4s ease-in-out infinite;
 }
 
+/* Back Button */
+.back-home {
+  text-align: center;
+  padding: 3rem 0;
+}
+
 
 /* ─────────────────────────────────────────────────────────────────── */
 /* 3) Projects Grid / Card Styles (same as before, just scoped)      */

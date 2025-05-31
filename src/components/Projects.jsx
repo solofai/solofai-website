@@ -58,6 +58,13 @@ const Projects = () => {
           </div>
         </div>
       </section>
+
+      {/* Back to Home Button */}
+      <div className="back-home">
+        <a href="/" className="back-button">
+          <span>←</span> Back to Home
+        </a>
+      </div>
     </div>
   );
 };

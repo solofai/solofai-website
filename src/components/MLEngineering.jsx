@@ -118,33 +118,20 @@ const MLEngineering = () => {
         </div>
       </section>
 
-      {/* Technologies Section */}
 
-      {/* <section className="tech-section">
-        <div className="container">
+      {/* Technologies & Tools Section */}
+      <section className="tech-section">
+          <div className="container">
           <h2>Technologies & Tools</h2>
           <div className="tech-grid">
-            {mlEngineering.technologies.map((tech, index) => (
+              {allTechs.map((tech, index) => (
               <div key={index} className="tech-item">
-                <span className="tech-name">{tech}</span>
+                  <span className="tech-name">{tech}</span>
               </div>
-            ))}
+              ))}
           </div>
-        </div>
-      </section> */}
-        {/* Technologies & Tools Section */}
-            <section className="tech-section">
-                <div className="container">
-                <h2>Technologies & Tools</h2>
-                <div className="tech-grid">
-                    {allTechs.map((tech, index) => (
-                    <div key={index} className="tech-item">
-                        <span className="tech-name">{tech}</span>
-                    </div>
-                    ))}
-                </div>
-                </div>
-            </section>
+          </div>
+      </section>
             
       {/* Back to Home Button */}
       <div className="back-home">
