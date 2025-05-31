@@ -64,12 +64,77 @@ body {
 }
 
 /* === Desktop nav-bar is shown by default here === */
-/* No rules needed — your existing .nav-bar styles remain active */
+/* Desktop Navigation */
+.desktop-nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--cosmic-black);
+  padding: 1rem 2rem;
+  z-index: 1001;
+}
 
-/* === Hide desktop nav-bar on true mobile/touch devices only === */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.desktop-logo {
+  color: var(--star-white);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0rem;
+}
+
+.nav-links a {
+  color: var(--star-white);
+  text-decoration: none;
+  padding: 0.5rem 0.5rem;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+* === Hide desktop nav-bar on true mobile/touch devices only === */
 @media (max-width: 768px) and (hover: none) and (pointer: coarse) {
   .nav-bar {
     display: none !important;
   }
 }
 
+/* Show desktop nav on larger screens */
+@media (min-width: 769px) {
+  .mobile-header,
+  .mobile-nav-drawer {
+    display: none !important;
+  }
+  
+  .desktop-nav {
+    display: flex;
+  }
+}
+
+/* Show mobile nav on smaller screens */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  
+  .mobile-header {
+    display: flex;
+  }
+}
