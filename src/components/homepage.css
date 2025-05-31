@@ -1,11 +1,11 @@
 /* DIAGNOSTIC - Remove after debugging */
-html, body, #root {
+/* html, body, #root {
   width: 100vw !important;
   max-width: none !important;
   margin: 0 !important;
   padding: 0 !important;
   overflow-x: hidden !important;
-}
+} */
 
 /* Solar-inspired color palette */
 :root {
@@ -65,12 +65,13 @@ body {
 }
 
 .nav-container {
-  /* max-width: 1200px; */
-  margin: 0 auto;
-  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 2rem !important;
 }
 
 .nav-logo {

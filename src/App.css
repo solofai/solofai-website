@@ -8,6 +8,34 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Global Layout Rules */
+html, body, #root {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Ensure all page containers use full width */
+/* .homepage, 
+.academic-page, 
+.ml-page, 
+.biometrics-page, 
+.contact-page, 
+.projects-page {
+  width: 100%;
+  max-width: none;
+} */
+
+/* Ensure all content containers use full width */
+.container {
+  max-width: none !important;
+  width: 100% !important;
+  margin: 0;
+  padding: 0 2rem;
+}
+
 /* Target the Router wrapper */
 .App, main, [data-testid="app"] {
   width: 100% !important;
