@@ -4,10 +4,9 @@
 /* 1) Root Variables and Page Setup (reuse site’s cosmic palette)    */
 /* ─────────────────────────────────────────────────────────────────── */
 .projects-page {
+  min-height: 100vh;
   background: var(--cosmic-black);
   color: var(--star-white);
-  min-height: 100vh;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /* Make sure the nav bar (if fixed) does not cover our hero */
@@ -17,7 +16,8 @@
 
 /* Container just centers the content; same as other pages */
 .projects-page .container {
-  max-width: 1000px;
+  max-width: none !important;
+ width: 100% !important;
   margin: 0 auto;
   padding: 0 2rem;
 }

@@ -5,19 +5,6 @@ import './Contact.css';
 const Contact = () => {
   return (
     <div className="contact-page">
-      {/* Navigation Bar */}
-      <nav className="nav-bar">
-        <div className="nav-container">
-          <a href="/" className="nav-logo">Sol of AI</a>
-          <div className="nav-links">
-            <a href="/" className="nav-link">Home</a>
-            <a href="/academic" className="nav-link">Academic</a>
-            <a href="/engineering" className="nav-link">ML Engineering</a>
-            <a href="/research" className="nav-link">Research</a>
-          </div>
-        </div>
-      </nav>
-
       {/* Hero Section */}
       <section className="page-hero">
         <div className="hero-background"></div>

@@ -8,6 +8,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Target the Router wrapper */
+.App, main, [data-testid="app"] {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 /* === Mobile Header & Drawer (always visible) === */
 .mobile-header {
   display: flex;
@@ -76,12 +83,20 @@ body {
   z-index: 1001;
 }
 
+.container {
+  max-width: none !important;
+  width: 100% !important;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
 }
 

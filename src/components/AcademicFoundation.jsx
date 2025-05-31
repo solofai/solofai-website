@@ -5,19 +5,7 @@ import './AcademicFoundation.css';
 const AcademicFoundation = () => {
   return (
     <div className="academic-page">
-      {/* Navigation Bar */}
-      <nav className="nav-bar">
-        <div className="nav-container">
-          <a href="/" className="nav-logo">Sol of AI</a>
-          <div className="nav-links">
-            <a href="/" className="nav-link">Home</a>
-            <a href="/engineering" className="nav-link">ML Engineering</a>
-            <a href="/research" className="nav-link">Research</a>
-            <a href="/contact" className="nav-link">Contact</a>
-          </div>
-        </div>
-      </nav>
-
+    
       {/* Hero Section */}
       <section className="page-hero">
         <div className="hero-background"></div>

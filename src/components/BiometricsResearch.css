@@ -127,7 +127,8 @@
 }
 
 .container {
-  max-width: 1000px;
+  max-width: none !important;
+  width: 100% !important;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -218,7 +219,7 @@
 .focus-section {
   padding: 4rem 0;
   background: linear-gradient(180deg, var(--cosmic-black) 0%, var(--midnight-blue) 100%);
-}
+}midnig
 
 .focus-section h2 {
   text-align: center;
