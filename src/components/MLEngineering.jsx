@@ -76,6 +76,20 @@ const MLEngineering = () => {
                   <span className="detail-value">{resp}</span>
                 </div>
               ))}
+
+              <div className="detail-item">
+                <span className="detail-label">Technologies:</span>
+                <span className="detail-value">
+                  {mlEngineering.technologies.join(', ')}
+                </span>
+              </div>
+
+              {/* {mlEngineering.technologies.map((tech, index) => (
+                <div key={index} className="detail-item">
+                  <span className="detail-label">Technology:</span>
+                  <span className="detail-value">{tech}</span>
+                </div>
+              ))} */}
             </div>
           </div>
         </div>
@@ -124,6 +138,14 @@ const MLEngineering = () => {
                     <span className="detail-value">{resp}</span>
                   </div>
                 ))}
+
+                <div className="detail-item">
+                  <span className="detail-label">Technologies:</span>
+                  <span className="detail-value">
+                    {exp.technologies.join(', ')}
+                  </span>
+                </div>
+
               </div>
             </div>
           ))}

@@ -46,7 +46,22 @@ const AcademicFoundation = () => {
                     {degree.thesis && (
                       <div className="thesis-section">
                         <h5>{degree.thesis.type}:</h5>
-                        <p className="thesis-title">"{degree.thesis.title}"</p>
+
+                        <p className="thesis-title">
+                          "{degree.thesis.title}"
+                        </p>
+
+                        {degree.thesis.link && (
+                          <p className="thesis-link">
+                            <a
+                              href={degree.thesis.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              View Thesis
+                            </a>
+                          </p>
+                        )}
                       </div>
                     )}
                     

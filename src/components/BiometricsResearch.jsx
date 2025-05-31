@@ -54,6 +54,23 @@ const BiometricsResearch = () => {
         </div>
       </section>
 
+       {/* Related Research Section */}
+      <section className="project-section">
+        <div className="container">
+          <h2>Related Research</h2>
+          <ul>
+            {biometricsResearch.related_research.map((paper, idx) => (
+              <li key={idx} style={{ marginBottom: '1rem' }}>
+                {paper.authors} ({paper.year}). <em>{paper.title}</em>. {paper.venue}.{' '}
+                <a href={paper.link} target="_blank" rel="noopener noreferrer">
+                  {paper.link}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* Research Focus Section */}
       <section className="focus-section">
         <div className="container">

@@ -4,7 +4,10 @@ import Homepage from './components/Homepage';
 import AcademicFoundation from './components/AcademicFoundation';
 import MLEngineering from './components/MLEngineering';
 import BiometricsResearch from './components/BiometricsResearch';
+import Projects from './components/Projects';
 import Contact from './components/Contact';
+import Navbar from './components/Navbar';
+import Logo from './components/Logo';
 import './App.css';
 
 function App() {
@@ -12,6 +15,9 @@ function App() {
 
   return (
     <Router>
+      {/* DESKTOP NAVBAR */}
+      <Navbar />
+
       {/* MOBILE HEADER */}
       <header className="mobile-header">
         <button
@@ -21,9 +27,14 @@ function App() {
         >
           ☰
         </button>
-        <Link to="/" className="mobile-logo">
-          Sol of AI
-        </Link>
+        <div className="mobile-logo">
+          <Logo 
+            variant="icon" 
+            size="32px" 
+            showText={true}
+            linkTo="/"
+          />
+        </div>
       </header>
 
       {/* MOBILE NAV DRAWER */}
@@ -33,31 +44,44 @@ function App() {
           <Link to="/academic" onClick={() => setMenuOpen(false)}>Academic</Link>
           <Link to="/engineering" onClick={() => setMenuOpen(false)}>Engineering</Link>
           <Link to="/research" onClick={() => setMenuOpen(false)}>Research</Link>
+          <Link to="/projects" onClick={() => setMenuOpen(false)}>Projects</Link>
           <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
         </nav>
       )}
 
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/academic" element={<AcademicFoundation />} />
-        <Route path="/engineering" element={<MLEngineering />} />
-        <Route path="/research" element={<BiometricsResearch />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-
-    {/* ─────── FOOTER ─────── */}
-    <footer className="app-footer">
-      <div className="footer-container">
-        <p className="footer-updated">
-          Last updated: May 23, 2025
-        </p>
-        <p className="footer-credit">
-          © 2025 Sol of AI • 
-          <a href="mailto:sol@solofai.com">sol@solofai.com</a>
-        </p>
+      {/* MAIN CONTENT */}
+      <div className="app-content">
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/academic" element={<AcademicFoundation />} />
+          <Route path="/engineering" element={<MLEngineering />} />
+          <Route path="/research" element={<BiometricsResearch />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </div>
-    </footer>
 
+      {/* FOOTER */}
+      <footer className="app-footer">
+        <div className="footer-container">
+          <div className="footer-logo">
+            <Logo 
+              variant="full" 
+              size="60px"
+              linkTo="/"
+            />
+          </div>
+          <div className="footer-info">
+            <p className="footer-updated">
+              Last updated: May 23, 2025
+            </p>
+            <p className="footer-credit">
+              © 2025 Sol of AI • 
+              <a href="mailto:sol@solofai.com">sol@solofai.com</a>
+            </p>
+          </div>
+        </div>
+      </footer>
     </Router>
   );
 }
