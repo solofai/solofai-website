@@ -9,9 +9,10 @@ export const mlEngineering = {
   duration: "2022 - Present",
   responsibilities: [
     "Research, analyze, & develop ML models for hardware analysis",
-    "Manage 50+ models on various datasets ranging from 10k to 1.4M"
+    "Manage 50+ models on various datasets ranging from 10k to 1.4M graphs"
   ],
-  technologies: ["Python", "PyTorch", "PyG", "Polars", "Linux", "bash","graph data", "ML/DL"],
+  technologies: ["Python", "Jupyter", "PyTorch", "PyG", "Polars", "Linux", "Bash","graph data", "mlflow",
+                "ML/DL", "GNNs", "Sklearn", "NumPy", "Pandas", "Matplotlib","Nvidia GPUs", "Docker", "Git"],
   description: "Specializing in cyber hardware security and assurance, developing advanced ML models for critical infrastructure protection",
   previous: [
     {
@@ -26,7 +27,7 @@ export const mlEngineering = {
         "Implemented FFT and custom data transformation pipelines",
         "Analyzed model performance and optimized hyperparameters"
       ],
-      technologies: ["Python", "Pytorch", "Jupyter Notebook", "NumPy", "Matplotlib","sequential data", "ML/DL"]
+      technologies: ["Python", "PyTorch", "Jupyter", "NumPy", "Matplotlib","sequential data", "transformers", "LSTM", "BiRNN"]
     },
     {
       role: "Associate Computer Scientist - Computer Vision & Program Management",
@@ -41,7 +42,7 @@ export const mlEngineering = {
         "Explore synthetic data generation with GANs to develop proof-of-concept text extraction using YOLO.",
         "Compete for funding and liaise with joint forces component to improve safety for war fighters",
       ],
-      technologies: ["Python", "OpenCV", "TensorFlow", "Pandas", "CNNs", "ML","image data", "video data"]
+      technologies: ["Python", "OpenCV", "TensorFlow", "Pandas", "CNNs","GANs","YOLO", "NN", "ML","image data", "video data"]
     },
     {
       role: "Graduate Research Assistant in Mission Assurance",
@@ -51,7 +52,7 @@ export const mlEngineering = {
       duration: "Dec 2016 - May 2019",
       description: "Conducted research into system-theoretic mission assurance methodologies, formal methods verification, and prototype automation.",
       responsibilities: [
-        "Conducted research into System-theoretic and Operational Risk Management (STORM) applied to a non-automated, human-centered system (MS thesis) and x86 architectural flaws (course project)",
+        "Conducted research into System-theoretic and Operational Risk Management (STORM) applied to a non-automated, human-centered system (Master's thesis) and x86 architectural flaws (course project)",
         "Demonstrated Certified Security by Design (CSBD) using Higher Order Logic (HOL) theorem proving and secure state machines",
         "Applied System Theoretic Process Analysis for Security (STPA-Sec) to link stakeholder security definitions to lower-level system vulnerability analysis",
         "Suggested improvements to STORM by integrating Assurance Case Methodology into verification documentation and automating the process",
@@ -61,7 +62,7 @@ export const mlEngineering = {
         "System-theoretic and Operational Risk Management (STORM)",
         "Higher Order Logic (HOL) Theorem Prover",
         "System Theoretic Process Analysis for Security (STPA-Sec)",
-        "Haskell"
+        "Haskell", "HOL", "Formal Methods", "UAV Mission Assurance"
       ]
     }
   ]

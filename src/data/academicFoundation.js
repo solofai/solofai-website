@@ -39,16 +39,16 @@ export const academicFoundation = {
   
   // Additional details for potential expansion
   researchInterests: [
+    "Machine Learning for Security",
+    "Biomedical Forensics Applications",
     "Formal Methods in Computer Science",
     "Systems Safety and Risk Management", 
     "Plasma Physics and Fusion Energy",
-    "Biomedical Forensics Applications",
-    "Machine Learning for Security"
   ],
   
   keyAchievements: [
     "Published research in premier physics journal Nuclear Fusion",
-    "Developed STORM framework for mission assurance",
+    "Completed Master's Thesis in mission and systems assurance",
     "Interdisciplinary expertise spanning hard sciences to applied CS"
   ]
 };
