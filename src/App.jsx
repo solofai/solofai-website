@@ -63,7 +63,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
 
-    {/* ─────── FOOTER ─────── */}
+    {/* ─────── FOOTER ───────
     <footer className="app-footer">
       <div className="footer-container">
         <p className="footer-updated">
@@ -73,6 +73,37 @@ function App() {
           © 2025 Sol of AI • 
           <a href="mailto:sol@solofai.com">sol@solofai.com</a>
         </p>
+      </div>
+    </footer> */}
+    {/* ─────── FOOTER ─────── */}
+    <footer className="app-footer">
+      <div className="footer-container">
+        {/* Disclaimer Section */}
+        <div className="footer-disclaimer">
+          <p>
+            <strong>Disclaimer:</strong> Sol of AI is a private brand / personal initiative focused on sun-inspired AI solutions. 
+            It is not affiliated with or endorsed by "The Sol of AI" newsletter/book by Sol Rashidi. 
+            Learn more about Sol Rashidi's work at{' '}
+            <a href="https://www.solrashidi.com/" target="_blank" rel="noopener noreferrer">
+              solrashidi.com
+            </a>{' '}
+            or{' '}
+            <a href="https://solrashidi.substack.com/" target="_blank" rel="noopener noreferrer">
+              solrashidi.substack.com
+            </a>.
+          </p>
+        </div>
+
+        {/* Original Footer Content */}
+        <div className="footer-info">
+          <p className="footer-updated">
+            Last updated: May 30, 2025
+          </p>
+          <p className="footer-credit">
+            © 2025 Sol of AI • 
+            <a href="mailto:sol@solofai.com">sol@solofai.com</a>
+          </p>
+        </div>
       </div>
     </footer>
 
