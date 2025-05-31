@@ -2,7 +2,7 @@
 export const biometricsResearch = {
   icon: '🧬',
   title: 'Biometrics Research',
-  description: 'Advancing authentication and security through biometric technologies',
+  description: 'Advancing authentication and identification security through biometric research.',
   project: 'Keystroke Dynamics & Fake Profile Detection',
   team: 'Independent research team of academics and industry experts',
   github: 'https://github.com/FakeProfileDetection',
