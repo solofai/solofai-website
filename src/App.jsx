@@ -5,6 +5,7 @@ import AcademicFoundation from './components/AcademicFoundation';
 import MLEngineering from './components/MLEngineering';
 import BiometricsResearch from './components/BiometricsResearch';
 import Contact from './components/Contact';
+import Projects from './components/Projects';
 import './App.css';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Link to="/academic" onClick={() => setMenuOpen(false)}>Academic</Link>
           <Link to="/engineering" onClick={() => setMenuOpen(false)}>Engineering</Link>
           <Link to="/research" onClick={() => setMenuOpen(false)}>Research</Link>
+          <Link to="/projects" onClick={() => setMenuOpen(false)}>Projects</Link>
           <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
         </nav>
       )}
@@ -42,6 +44,7 @@ function App() {
         <Route path="/academic" element={<AcademicFoundation />} />
         <Route path="/engineering" element={<MLEngineering />} />
         <Route path="/research" element={<BiometricsResearch />} />
+        <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
 
@@ -49,7 +52,7 @@ function App() {
     <footer className="app-footer">
       <div className="footer-container">
         <p className="footer-updated">
-          Last updated: May 23, 2025
+          Last updated: May 30, 2025
         </p>
         <p className="footer-credit">
           © 2025 Sol of AI • 

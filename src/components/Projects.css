@@ -1,0 +1,358 @@
+/* ===== src/components/Projects.css ===== */
+
+/* ─────────────────────────────────────────────────────────────────── */
+/* 1) Root Variables and Page Setup (reuse site’s cosmic palette)    */
+/* ─────────────────────────────────────────────────────────────────── */
+.projects-page {
+  background: var(--cosmic-black);
+  color: var(--star-white);
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Make sure the nav bar (if fixed) does not cover our hero */
+.projects-page {
+  padding-top: 60px; /* adjust if your nav height is different */
+}
+
+/* Container just centers the content; same as other pages */
+.projects-page .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ─────────────────────────────────────────────────────────────────── */
+/* 2) Hero Section (Blue-ish Gradient Background + Gold Title)       */
+/* ─────────────────────────────────────────────────────────────────── */
+.projects-page .page-hero {
+  margin-top: 60px;               /* Because we already padded the parent */
+  padding: 4rem 0;             /* vertical space above/below text */
+  position: relative;
+  overflow: hidden;
+  /* exactly the same gradient used on BiometricsResearch and similar pages */
+  background: linear-gradient(
+    135deg,
+    var(--midnight-blue) 0%,
+    var(--deep-purple) 100%
+  );
+}
+
+.projects-page .page-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  /* gold gradient text */
+  background: linear-gradient(45deg, var(--sun-gold), var(--glow-yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8));
+}
+
+.projects-page .page-hero .hero-subtitle {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 0;
+  /* slightly lighter gold gradient, or you can choose a pale gold color */
+  background: linear-gradient(45deg, #e6c975, #f7e4b2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.7));
+}
+
+
+page-hero {
+  margin-top: 60px;
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--midnight-blue) 0%, var(--deep-purple) 100%);
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.2;
+  background-image: 
+    radial-gradient(circle at 30% 70%, var(--sun-coral) 0%, transparent 40%),
+    radial-gradient(circle at 70% 30%, var(--sun-gold) 0%, transparent 40%);
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+.icon-large {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  animation: float 4s ease-in-out infinite;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────── */
+/* 3) Projects Grid / Card Styles (same as before, just scoped)      */
+/* ─────────────────────────────────────────────────────────────────── */
+.projects-page .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Card container */
+.projects-page .project-card {
+  background: rgba(255, 255, 255, 0.05);   /* translucent white on black */
+  border: 1px solid rgba(255, 215, 0, 0.3); /* gold-accented border */
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Hover “glow” effect */
+.projects-page .project-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+.projects-page .project-card:hover::before {
+  opacity: 1;
+}
+.projects-page .project-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--sun-gold);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+}
+
+/* Floating icon animation */
+.projects-page .project-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+  z-index: 1;
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Project Title (gold) */
+.projects-page .project-title {
+  font-size: 2rem;
+  color: var(--sun-gold);
+  margin-bottom: 1rem;
+  z-index: 1;
+}
+.projects-page .project-title a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+.projects-page .project-title a:hover {
+  text-decoration: underline;
+}
+
+/* Description text */
+.projects-page .project-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: var(--star-white);
+  z-index: 1;
+}
+
+/* Tech tags (pale gold pills) */
+.projects-page .tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  z-index: 1;
+}
+.projects-page .tech-tags .tech-tag {
+  display: inline-block;
+  background: rgba(255, 215, 0, 0.2); /* pale gold */
+  color: var(--sun-gold);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+.projects-page .tech-tags .tech-tag:hover {
+  background: var(--cosmic-black);
+  border: 1px solid var(--sun-gold);
+  transform: translateY(-2px);
+}
+
+/* Status line at bottom of card */
+.projects-page .project-status {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+  z-index: 1;
+}
+
+/* ─────────────────────────────────────────────────────────────────── */
+/* 4) Responsive Adjustments                                            */
+/* ─────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .projects-page .page-hero h1 {
+    font-size: 2.5rem;
+  }
+  .projects-page .page-hero .hero-subtitle {
+    font-size: 1.25rem;
+  }
+  .projects-page .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* ===== MOBILE HEADER UPDATES ===== */
+.mobile-header {
+  /* Your existing mobile header styles */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  height: 60px;
+  background: rgba(20, 25, 40, 0.95);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.mobile-logo {
+  display: flex;
+  align-items: center;
+}
+
+/* Hide mobile header on desktop */
+@media (min-width: 769px) {
+  .mobile-header {
+    display: none;
+  }
+}
+
+/* ===== MAIN CONTENT WRAPPER ===== */
+.app-content {
+  /* Add top padding for mobile header by default */
+  padding-top: 60px;
+}
+
+/* Add more top padding for desktop navbar */
+@media (min-width: 769px) {
+  .app-content {
+    padding-top: 70px;
+  }
+}
+
+/* ===== FOOTER UPDATES ===== */
+.app-footer {
+  background: var(--cosmic-black);
+  border-top: 1px solid rgba(255, 215, 0, 0.2);
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.footer-updated {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.footer-credit {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.footer-credit a {
+  color: var(--sun-gold);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-credit a:hover {
+  color: var(--glow-yellow);
+  text-decoration: underline;
+}
+
+/* Desktop footer layout */
+@media (min-width: 769px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+  
+  .footer-info {
+    align-items: flex-end;
+  }
+}
+
+/* ===== LOGO COMPONENT GLOBAL STYLES ===== */
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-link:hover {
+  text-decoration: none;
+}
+
+/* Ensure logo images are responsive */
+.logo-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
