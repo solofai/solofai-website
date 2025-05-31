@@ -27,6 +27,21 @@ function App() {
         </Link>
       </header>
 
+      {/* DESKTOP NAVIGATION (new) */}
+      <nav className="desktop-nav">
+        <div className="nav-container">
+          <Link to="/" className="desktop-logo">Sol of AI</Link>
+          <div className="nav-links">
+            <Link to="/">Home</Link>
+            <Link to="/academic">Academic</Link>
+            <Link to="/engineering">Engineering</Link>
+            <Link to="/research">Research</Link>
+            <Link to="/projects">Projects</Link>
+            <Link to="/contact">Contact</Link>
+          </div>
+        </div>
+      </nav>
+
       {/* MOBILE NAV DRAWER */}
       {menuOpen && (
         <nav className="mobile-nav-drawer">
