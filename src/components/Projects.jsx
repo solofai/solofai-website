@@ -1,5 +1,6 @@
 // ===== src/components/Projects.jsx =====
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { projects, projectsData } from '../data/projects';
 import './Projects.css';
 
@@ -22,48 +23,64 @@ const Projects = () => {
       <section className="projects-content">
         <div className="container">
           <div className="projects-grid">
-            {projects.map((project, idx) => (
-              <div key={idx} className="project-card">
-                <div className="project-icon">{project.icon}</div>
+            {projects.map((project, idx) => {
+              const isInternal = project.link?.startsWith('/');
+              return (
+                <div key={idx} className="project-card">
+                  {/* Project Image */}
+                  <div className="project-icon">{project.icon}</div>
+                  
+                  {/* Project Title and Description */}
+                  <h2 className="project-title">
+                    {/* Check if the link is internal or external */}
+                    {project.link ? (
+                      isInternal ? (
+                        <Link to={project.link} className="project-link">
+                          {project.title}
+                        </Link>
+                      ) : (
+                        <a  
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="project-link"
+                        >
+                          {project.title}
+                        </a>
+                      )
+                    ) : (
+                      project.title
+                    )}
+                  </h2>
+                  
+                  {/* Project Description */}
+                  <p className="project-description">{project.description}</p>
 
-                <h2 className="project-title">
-                  {project.link ? (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {project.title}
-                    </a>
-                  ) : (
-                    project.title
-                  )}
-                </h2>
+                  {/* Project Details */}
+                  <div className="tech-tags">
+                    {project.technologies.map((tech, tIdx) => (
+                      <span key={tIdx} className="tech-tag">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
 
-                <p className="project-description">{project.description}</p>
-
-                <div className="tech-tags">
-                  {project.technologies.map((tech, tIdx) => (
-                    <span key={tIdx} className="tech-tag">
-                      {tech}
-                    </span>
-                  ))}
+                  {/* Project Status */}
+                  <p className="project-status">
+                    <strong>Status:</strong> {project.status}
+                  </p>
                 </div>
-
-                <p className="project-status">
-                  <strong>Status:</strong> {project.status}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Back to Home Button */}
       <div className="back-home">
-        <a href="/" className="back-button">
+        <Link to="/" className="back-button">
           <span>←</span> Back to Home
-        </a>
+        </Link>
       </div>
     </div>
   );

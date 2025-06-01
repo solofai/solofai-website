@@ -24,7 +24,7 @@ export const projects = [
   },
   {
     title: 'Keystroke Biometrics For Security',
-    description: 'Exploring GNNs for complex data relationships and structures in behavioral biometrics authentication',
+    description: 'Research, publish, & develop tools for keystroke biometrics for security and fake profile detection.',
     technologies: [
         'Python',
         'PyTorch',
