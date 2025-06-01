@@ -79,7 +79,6 @@ const Homepage = () => {
         </div>
       </section>
 
-      {/* Rest of the Homepage content remains the same... */}
       {/* About Section */}
       <section className="about" style={{ transform: `translateY(${scrollY * -0.1}px)` }}>
         <div className="container">
