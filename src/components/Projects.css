@@ -1,7 +1,7 @@
 /* ===== src/components/Projects.css ===== */
 
 /* ─────────────────────────────────────────────────────────────────── */
-/* 1) Root Variables and Page Setup (reuse site’s cosmic palette)    */
+/* 1) Root Variables and Page Setup (reuse site's cosmic palette)    */
 /* ─────────────────────────────────────────────────────────────────── */
 .projects-page {
   min-height: 100vh;
@@ -17,7 +17,7 @@
 /* Container just centers the content; same as other pages */
 .projects-page .container {
   max-width: none !important;
- width: 100% !important;
+  width: 100% !important;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -62,8 +62,7 @@
   filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.7));
 }
 
-
-page-hero {
+.page-hero {
   margin-top: 60px;
   padding: 4rem 0;
   position: relative;
@@ -102,6 +101,35 @@ page-hero {
   padding: 3rem 0;
 }
 
+/* Back Button Styling */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid var(--sun-gold);
+  border-radius: 25px;
+  color: var(--sun-gold);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.back-button:hover {
+  background: var(--sun-gold);
+  color: var(--cosmic-black);
+  transform: translateX(-5px);
+}
+
+.back-button span {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.back-button:hover span {
+  transform: translateX(-3px);
+}
 
 /* ─────────────────────────────────────────────────────────────────── */
 /* 3) Projects Grid / Card Styles (same as before, just scoped)      */
@@ -124,7 +152,7 @@ page-hero {
   transition: all 0.3s ease;
 }
 
-/* Hover “glow” effect */
+/* Hover "glow" effect */
 .projects-page .project-card::before {
   content: '';
   position: absolute;
@@ -153,6 +181,7 @@ page-hero {
   display: inline-block;
   animation: float 3s ease-in-out infinite;
   z-index: 1;
+  position: relative;
 }
 @keyframes float {
   0%, 100% {
@@ -169,14 +198,27 @@ page-hero {
   color: var(--sun-gold);
   margin-bottom: 1rem;
   z-index: 1;
+  position: relative;
 }
-.projects-page .project-title a {
+
+/* Project Link Styles - FIXED */
+.projects-page .project-link {
   text-decoration: none;
   color: inherit;
   transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
 }
-.projects-page .project-title a:hover {
+
+.projects-page .project-link:hover {
   text-decoration: underline;
+  color: var(--glow-yellow);
+  transform: translateX(2px);
+}
+
+/* Ensure project title without links still looks good */
+.projects-page .project-title:not(:has(.project-link)) {
+  cursor: default;
 }
 
 /* Description text */
@@ -186,6 +228,7 @@ page-hero {
   margin-bottom: 1.5rem;
   color: var(--star-white);
   z-index: 1;
+  position: relative;
 }
 
 /* Tech tags (pale gold pills) */
@@ -195,6 +238,7 @@ page-hero {
   gap: 0.75rem;
   margin-bottom: 1.5rem;
   z-index: 1;
+  position: relative;
 }
 .projects-page .tech-tags .tech-tag {
   display: inline-block;
@@ -207,8 +251,8 @@ page-hero {
   z-index: 1;
 }
 .projects-page .tech-tags .tech-tag:hover {
-  background: var(--cosmic-black);
-  border: 1px solid var(--sun-gold);
+  background: var(--sun-gold);
+  color: var(--cosmic-black);
   transform: translateY(-2px);
 }
 
@@ -217,6 +261,13 @@ page-hero {
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.7);
   font-style: italic;
+  z-index: 1;
+  position: relative;
+}
+
+/* Ensure all content inside cards has proper z-index */
+.projects-page .project-card > * {
+  position: relative;
   z-index: 1;
 }
 

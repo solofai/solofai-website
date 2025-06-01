@@ -17,16 +17,6 @@ html, body, #root {
   overflow-x: hidden;
 }
 
-/* Ensure all page containers use full width */
-/* .homepage, 
-.academic-page, 
-.ml-page, 
-.biometrics-page, 
-.contact-page, 
-.projects-page {
-  width: 100%;
-  max-width: none;
-} */
 
 /* Ensure all content containers use full width */
 .container {
@@ -153,7 +143,7 @@ html, body, #root {
   background: rgba(255, 255, 255, 0.1);
 }
 
-* === Hide desktop nav-bar on true mobile/touch devices only === */
+/* === Hide desktop nav-bar on true mobile/touch devices only === */
 @media (max-width: 768px) and (hover: none) and (pointer: coarse) {
   .nav-bar {
     display: none !important;

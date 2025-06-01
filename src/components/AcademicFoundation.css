@@ -310,29 +310,6 @@
   font-size: 1.5rem;
 }
 
-/* Responsive */
-/* @media (max-width: 768px) {
-  .nav-bar {
-    display: none !important;
-  }
-{
-  .nav-links {
-    display: none;
-  }
-  
-  .timeline::before {
-    left: 20px;
-  }
-  
-  .timeline-item {
-    padding-left: 60px;
-  }
-  
-  .timeline-marker {
-    left: 12px;
-  }
-} */
-
 @media (max-width: 768px) 
   and (hover: none)      /* no hover = touch device */
   and (pointer: coarse)  /* coarse pointer = finger */ {

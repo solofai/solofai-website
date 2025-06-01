@@ -10,8 +10,8 @@ export const projects = [
     title: 'Radiation Safety Training Course',
     description: 'Developing an interactive website for radiation safety certification based on the work of John J. Pickering',
     technologies: ['AI Agents', 'LLMs', 'React JS', 'Google Firebase', 'Analysis'],
-    // link: '/engineering',
-    status: 'Prototype phase.',
+    link: 'https://solofai.github.io/radiation_safety',
+    status: 'Prototype phase.  Link is for the prototype web application.',
     icon: '☢️'
   },
   {
@@ -34,7 +34,7 @@ export const projects = [
         'Machine Learning',
         'Deep Learning',
     ],
-    link: '/biometrics', //link to the biometrics research page
+    link: '/research', //link to the biometrics research page
     status: 'Planning to publish soon.',
     icon: '🔐'
   },
