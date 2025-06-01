@@ -22,13 +22,13 @@ const Contact = () => {
             <div className="contact-method">
               <div className="contact-icon">✉️</div>
               <h3>Email</h3>
-              <a href="mailto:sol@solofai.com" className="contact-link">sol@solofai.com</a>
+              <a href={`mailto:${contactInfo.email}`} className="contact-link">{contactInfo.email}</a>
             </div>
             
             <div className="contact-method">
               <div className="contact-icon">💼</div>
               <h3>LinkedIn</h3>
-              <a href="https://www.linkedin.com/in/lori-pickering-b46841155/" target="_blank" rel="noopener noreferrer" className="contact-link">
+              <a href={contactInfo.linkedin} target="_blank" rel="noopener noreferrer" className="contact-link">
                 Connect on LinkedIn
               </a>
             </div>
@@ -36,7 +36,7 @@ const Contact = () => {
             <div className="contact-method">
               <div className="contact-icon">🐙</div>
               <h3>GitHub</h3>
-              <a href="https://github.com/solofai" target="_blank" rel="noopener noreferrer" className="contact-link">
+              <a href={contactInfo.github} target="_blank" rel="noopener noreferrer" className="contact-link">
                 @solofai
               </a>
             </div>
@@ -50,17 +50,14 @@ const Contact = () => {
           <h2>Professional Summary</h2>
           <div className="summary-card">
             <p>
-              Machine Learning Engineer with 6+ years of experience in fundamental and applied research. 
-              Expertise in graph neural networks (PyTorch, PyG), computer vision, and systems assurance methodologies. 
-              Currently focused on cyber hardware security and biometric authentication research.
+              {contactInfo.professionalSummary.description}
             </p>
             <div className="skills-highlight">
               <h4>Core Competencies:</h4>
               <ul>
-                <li>Graph Neural Networks & Deep Learning</li>
-                <li>Computer Vision & Object Detection</li>
-                <li>Formal Methods & Systems Assurance</li>
-                <li>Research & Development Leadership</li>
+                {contactInfo.professionalSummary.coreCompetencies.map((competency, index) => (
+                  <li key={index}>{competency}</li>
+                ))}
               </ul>
             </div>
           </div>
