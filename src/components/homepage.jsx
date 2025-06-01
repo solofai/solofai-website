@@ -1,3 +1,4 @@
+// src/components/Homepage.jsx
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Homepage.css';
@@ -40,7 +41,6 @@ const Homepage = () => {
 
   return (
     <div className="homepage">
-     
       {/* Hero Section with Animated Sun */}
       <section className="hero">
         <div className="sun-container">
@@ -79,6 +79,7 @@ const Homepage = () => {
         </div>
       </section>
 
+      {/* Rest of the Homepage content remains the same... */}
       {/* About Section */}
       <section className="about" style={{ transform: `translateY(${scrollY * -0.1}px)` }}>
         <div className="container">

@@ -261,3 +261,36 @@ html, body, #root {
     min-width: 300px;
   }
 }
+
+/* Mobile Logo with Icon */
+.mobile-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mobile-icon {
+  height: 25px;
+  width: 25px;
+}
+
+.mobile-logo {
+  color: var(--star-white);
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* Hide desktop nav on mobile */
+@media (max-width: 768px) {
+  .nav-bar {
+    display: none !important;
+  }
+}
+
+/* Show desktop nav on larger screens */
+@media (min-width: 769px) {
+  .mobile-header,
+  .mobile-nav-drawer {
+    display: none !important;
+  }
+}
