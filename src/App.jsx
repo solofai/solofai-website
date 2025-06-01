@@ -28,7 +28,7 @@ function App() {
           ☰
         </button>
         <div className="mobile-logo-container">
-          <img src="/solofai-icon.svg" alt="Sol of AI" className="mobile-icon" />
+          <img src="/../public/solofai-icon.svg" alt="Sol of AI" className="mobile-icon" />
           <span className="mobile-logo">Sol of AI</span>
         </div>
       </header>
