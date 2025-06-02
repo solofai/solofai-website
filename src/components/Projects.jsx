@@ -1,4 +1,4 @@
-// ===== src/components/Projects.jsx =====
+// src/components/Projects.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { projects, projectsData } from '../data/projects';
@@ -6,8 +6,8 @@ import './Projects.css';
 
 const Projects = () => {
   return (
-    <div className="projects-page">
-      {/* Hero Section */}
+    <div>
+      {/* Hero Section - using global styles */}
       <section className="page-hero">
         <div className="hero-background"></div>
         <div className="container">
@@ -20,19 +20,18 @@ const Projects = () => {
       </section>
 
       {/* Projects Grid */}
-      <section className="projects-content">
+      <section className="starfield">
         <div className="container">
-          <div className="projects-grid">
+          <div className="grid grid-2">
             {projects.map((project, idx) => {
               const isInternal = project.link?.startsWith('/');
               return (
-                <div key={idx} className="project-card">
-                  {/* Project Image */}
+                <div key={idx} className="card card-project">
+                  {/* Project Icon */}
                   <div className="project-icon">{project.icon}</div>
                   
-                  {/* Project Title and Description */}
-                  <h2 className="project-title">
-                    {/* Check if the link is internal or external */}
+                  {/* Project Title */}
+                  <h3 className="project-title">
                     {project.link ? (
                       isInternal ? (
                         <Link to={project.link} className="project-link">
@@ -51,15 +50,15 @@ const Projects = () => {
                     ) : (
                       project.title
                     )}
-                  </h2>
+                  </h3>
                   
                   {/* Project Description */}
                   <p className="project-description">{project.description}</p>
 
-                  {/* Project Details */}
-                  <div className="tech-tags">
+                  {/* Technologies */}
+                  <div className="tag-container">
                     {project.technologies.map((tech, tIdx) => (
-                      <span key={tIdx} className="tech-tag">
+                      <span key={tIdx} className="tag">
                         {tech}
                       </span>
                     ))}
@@ -76,7 +75,7 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* Back to Home Button */}
+      {/* Back to Home Button - using global styles */}
       <div className="back-home">
         <Link to="/" className="back-button">
           <span>←</span> Back to Home

@@ -1,18 +1,19 @@
 // src/components/MLEngineering.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { mlEngineering } from '../data/machinelearning';
 import './MLEngineering.css';
 
 const MLEngineering = () => {
-    // Combine current and previous experience technologies
-    const allTechs = [
-        ...mlEngineering.technologies,
-        ...mlEngineering.previous.flatMap(exp => exp.technologies)
-    ];
+  // Combine current and previous experience technologies
+  const allTechs = [
+    ...mlEngineering.technologies,
+    ...mlEngineering.previous.flatMap(exp => exp.technologies)
+  ];
+  
   return (
     <div className="ml-page">
-
-      {/* Hero Section */}
+      {/* Hero Section - using global styles */}
       <section className="page-hero">
         <div className="hero-background"></div>
         <div className="hero-content">
@@ -23,10 +24,10 @@ const MLEngineering = () => {
       </section>
 
       {/* Current Role Section */}
-      <section className="role-section">
+      <section className="starfield">
         <div className="container">
-          <h2>Current Position</h2>
-          <div className="role-card">
+          <h2 className="section-title">Current Position</h2>
+          <div className="card card-detail">
             <h3>{mlEngineering.role}</h3>
             <div className="role-details">
               <div className="detail-item">
@@ -72,9 +73,9 @@ const MLEngineering = () => {
       {/* Previous Experience Section */}
       <section className="previous-experience">
         <div className="container">
-          <h2>Previous Experience</h2>
+          <h2 className="section-title">Previous Experience</h2>
           {mlEngineering.previous.map((exp, idx) => (
-            <div key={idx} className="role-card">
+            <div key={idx} className="card card-detail experience-card">
               <h3>{exp.role}</h3>
               <div className="role-details">
                 <div className="detail-item">
@@ -118,26 +119,25 @@ const MLEngineering = () => {
         </div>
       </section>
 
-
       {/* Technologies & Tools Section */}
-      <section className="tech-section">
-          <div className="container">
-          <h2>Technologies & Tools</h2>
-          <div className="tech-grid">
-              {allTechs.map((tech, index) => (
-              <div key={index} className="tech-item">
-                  <span className="tech-name">{tech}</span>
-              </div>
-              ))}
+      <section>
+        <div className="container">
+          <h2 className="section-title">Technologies & Tools</h2>
+          <div className="tag-container" style={{ justifyContent: 'center' }}>
+            {allTechs.map((tech, index) => (
+              <span key={index} className="tag tag-outline tech-special">
+                {tech}
+              </span>
+            ))}
           </div>
-          </div>
+        </div>
       </section>
             
-      {/* Back to Home Button */}
+      {/* Back to Home Button - using global styles */}
       <div className="back-home">
-        <a href="/" className="back-button">
+        <Link to="/" className="back-button">
           <span>←</span> Back to Home
-        </a>
+        </Link>
       </div>
     </div>
   );

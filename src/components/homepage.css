@@ -207,15 +207,13 @@ body {
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8));
 }
 
-.hero-subtitle {
-  font-size: 1.8rem;
-  background: linear-gradient(45deg, #D4A574, #E6D5AA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 0.5rem;
-  font-weight: 400;
-  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.7));
+.hero-description {
+  font-size: 1.2rem;
+  color: midnight-blue;
+  margin-bottom: 1.0rem;
+  /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */
+  line-height: 1.2;  /* Add this - default is usually 1.6 */
+  
 }
 
 .hero-description {
@@ -247,20 +245,28 @@ body {
   color: var(--cosmic-black);
 }
 
+/* Hover state - brighter glow */
 .cta-primary:hover {
+  background: linear-gradient(90deg, var(--sun-gold), var(--glow-yellow));
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+  box-shadow: 
+    0 10px 30px rgba(255, 215, 0, 0.6),
+    0 0 30px rgba(255, 215, 0, 0.4);
 }
 
 .cta-secondary {
-  background: transparent;
-  color: var(--star-white);
-  border: 2px solid var(--sun-gold);
+  /* Reversed gradient - darker on left, lighter on right */
+  background: linear-gradient(45deg, var(--sun-orange), var(--sun-gold));
+  color: var(--cosmic-black);
 }
 
 .cta-secondary:hover {
-  background: var(--sun-gold);
-  color: var(--cosmic-black);
+  /* Reversed hover gradient */
+  background: linear-gradient(45deg, var(--sun-gold), var(--glow-yellow));
+  transform: translateY(-2px);
+  box-shadow: 
+    0 10px 30px rgba(255, 215, 0, 0.6),
+    0 0 30px rgba(255, 215, 0, 0.4);
 }
 
 /* Scroll Indicator */
@@ -318,7 +324,7 @@ body {
 
 /* About Section */
 .about {
-  padding: 5rem 0;
+  padding: 1rem 0 0rem 0;
   background: linear-gradient(180deg, var(--cosmic-black) 0%, var(--midnight-blue) 100%);
 }
 
@@ -381,12 +387,13 @@ body {
 
 .about-card h3 {
   color: var(--sun-gold);
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
 }
 
 /* Projects Section */
 .projects {
-  padding: 5rem 0;
+  margin-top: 0rem;
+  padding: 2rem 0;
   background: linear-gradient(180deg, var(--cosmic-black) 0%, var(--deep-purple) 100%);
 }
 
@@ -632,7 +639,7 @@ body {
   position: absolute;
   left: 0;
   color: var(--sun-gold);
-}
+},
 
 .modal-cta {
   text-align: center;
