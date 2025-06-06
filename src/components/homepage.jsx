@@ -41,8 +41,8 @@ const Homepage = () => {
 
   return (
     <div className="homepage">
-      {/* Hero Section with Animated Sun */}
-      <section className="hero">
+      {/* Hero Section with Animated Sun - KEEP ORIGINAL STYLES */}
+      <section className="hero starfield">
         <div className="sun-container">
           <div className="sun" style={{
             transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`
@@ -79,70 +79,67 @@ const Homepage = () => {
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="about" style={{ transform: `translateY(${scrollY * -0.1}px)` }}>
+      {/* About Section - USE GLOBAL STYLES */}
+      <section className="about starfield" style={{ transform: `translateY(${scrollY * -0.1}px)` }}>
         <div className="container">
           <h2 className="section-title">The Journey of Sol</h2>
-          <div className="about-grid">
-            <div className="about-card clickable" onClick={() => handleNavigation('/academic')}>
+          <div className="grid grid-auto">
+            <div className="card card-nav" onClick={() => handleNavigation('/academic')}>
               <div className="icon-wrapper">
                 <div className="icon">🎓</div>
               </div>
               <h3>Academic Foundation</h3>
               <p>Double BS in Physics & Applied Computational Mathematics, MS in Biomedical Forensic Science, MS in Computer Science</p>
-              <div className="card-arrow">→</div>
+              <div className="arrow-indicator">→</div>
             </div>
-            <div className="about-card clickable" onClick={() => handleNavigation('/engineering')}>
+            <div className="card card-nav" onClick={() => handleNavigation('/engineering')}>
               <div className="icon-wrapper">
                 <div className="icon">🔒</div>
               </div>
               <h3>Machine Learning Engineer</h3>
               <p>Specializing in cyber hardware security and assurance, developing advanced ML models for critical infrastructure protection</p>
-              <div className="card-arrow">→</div>
+              <div className="arrow-indicator">→</div>
             </div>
-            <div className="about-card clickable" onClick={() => handleNavigation('/research')}>
+            <div className="card card-nav" onClick={() => handleNavigation('/research')}>
               <div className="icon-wrapper">
                 <div className="icon">🧬</div>
               </div>
               <h3>Biometrics Research</h3>
               <p>Leading innovative research in biometric applications for data science and AI</p>
-              <div className="card-arrow">→</div>
+              <div className="arrow-indicator">→</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Projects Preview */}
-      <section className="projects">
+      {/* Projects Preview - USE GLOBAL STYLES */}
+      <section className="about starfield">
         <div className="container">
           <h2 className="section-title">Rays of Innovation</h2>
-          <div className="projects-grid">
-            <div className="project-card clickable" onClick={() => handleNavigation('/engineering')}>
-              <div className="project-glow"></div>
+          <div className="grid grid-auto">
+            <div className="card card-nav card-glow" onClick={() => handleNavigation('/engineering')}>
               <h3>Cyber Hardware Security</h3>
               <p>Developing ML models for hardware analysis and threat detection</p>
-              <span className="project-tag">Machine Learning</span>
-              <div className="card-arrow">→</div>
+              <span className="tag project-tag">Machine Learning</span>
+              <div className="arrow-indicator">→</div>
             </div>
-            <div className="project-card clickable" onClick={() => handleNavigation('/research')}>
-              <div className="project-glow"></div>
+            <div className="card card-nav card-glow" onClick={() => handleNavigation('/research')}>
               <h3>Biometric Authentication</h3>
               <p>Researching keystroke dynamics and fake profile detection</p>
-              <span className="project-tag">Research</span>
-              <div className="card-arrow">→</div>
+              <span className="tag project-tag">Research</span>
+              <div className="arrow-indicator">→</div>
             </div>
-            <div className="project-card" onClick={handlePrivateProject}>
-              <div className="project-glow"></div>
+            <div className="card card-nav card-glow" onClick={handlePrivateProject}>
               <h3>Radiation Safety Training</h3>
               <p>Developing an educational platform for radiation safety certification</p>
-              <span className="project-tag">In Development</span>
+              <span className="tag project-tag">In Development</span>
               <div className="coming-soon">Private Repository</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Modal for Private Repository */}
+      {/* Modal for Private Repository - KEEP ORIGINAL STYLES */}
       {showModal && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -169,8 +166,8 @@ const Homepage = () => {
         </div>
       )}
 
-      {/* Contact */}
-      <section className="contact">
+      {/* Contact - KEEP ORIGINAL STYLES */}
+      <section className="contact starfield">
         <div className="container">
           <h2 className="section-title">Connect with Sol</h2>
           <p className="contact-subtitle">Let's create something brilliant together</p>

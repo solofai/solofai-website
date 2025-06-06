@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { biometricsResearch } from '../data/biometrics';
 import './BiometricsResearch.css';
 
 const BiometricsResearch = () => {
   return (
     <div className="biometrics-page">
-      {/* Hero Section */}
+      {/* Hero Section - using global styles */}
       <section className="page-hero">
         <div className="hero-background"></div>
         <div className="hero-content">
@@ -16,12 +17,12 @@ const BiometricsResearch = () => {
       </section>
 
       {/* Project Overview Section */}
-      <section className="project-section">
+      <section className="starfield">
         <div className="container">
-          <h2>Research Project</h2>
-          <div className="project-overview">
+          <h2 className="section-title">Research Project</h2>
+          <div className="card card-detail dna-decoration">
             <h3>{biometricsResearch.project}</h3>
-            <div className="project-details">
+            <div className="role-details">
               <div className="detail-item">
                 <span className="detail-label">Team:</span>
                 <span className="detail-value">{biometricsResearch.team}</span>
@@ -30,7 +31,10 @@ const BiometricsResearch = () => {
                 <div className="detail-item">
                   <span className="detail-label">GitHub:</span>
                   <span className="detail-value">
-                    <a href={biometricsResearch.github} target="_blank" rel="noopener noreferrer" className="github-link">
+                    <a href={biometricsResearch.github} 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       className="link-external">
                       {biometricsResearch.github.replace('https://github.com/', '')}
                     </a>
                   </span>
@@ -41,32 +45,38 @@ const BiometricsResearch = () => {
         </div>
       </section>
 
-       {/* Related Research Section */}
-      <section className="project-section">
+      {/* Related Research Section */}
+      <section className="starfield">
         <div className="container">
-          <h2>Related Research</h2>
-          <ul>
-            {biometricsResearch.related_research.map((paper, idx) => (
-              <li key={idx} style={{ marginBottom: '1rem' }}>
-                {paper.authors} ({paper.year}). <em>{paper.title}</em>. {paper.venue}.{' '}
-                <a href={paper.link} target="_blank" rel="noopener noreferrer">
-                  {paper.link}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <h2 className="section-title">Related Research</h2>
+          <div className="card">
+            <ul style={{ listStyle: 'none', padding: 0 }}>
+              {biometricsResearch.related_research.map((paper, idx) => (
+                <li key={idx} style={{ marginBottom: '1.5rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                  <span style={{ position: 'absolute', left: 0, color: 'var(--sun-gold)' }}>▸</span>
+                  {paper.authors} ({paper.year}). <em>{paper.title}</em>. {paper.venue}.{' '}
+                  <a href={paper.link} 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     className="link-external">
+                    View Paper
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
       {/* Research Focus Section */}
-      <section className="focus-section">
+      <section className="starfield">
         <div className="container">
-          <h2>Research Focus Areas</h2>
-          <div className="focus-grid">
+          <h2 className="section-title">Research Focus Areas</h2>
+          <div className="grid grid-auto">
             {biometricsResearch.focus.map((area, index) => (
-              <div key={index} className="focus-card">
+              <div key={index} className="card">
                 <div className="focus-icon">🎯</div>
-                <h4>{area}</h4>
+                <h4 style={{ textAlign: 'center', color: 'var(--sun-gold)' }}>{area}</h4>
               </div>
             ))}
           </div>
@@ -74,12 +84,12 @@ const BiometricsResearch = () => {
       </section>
 
       {/* Technologies Section */}
-      <section className="tech-section">
+      <section className="starfield">
         <div className="container">
-          <h2>Technologies & Methodologies</h2>
-          <div className="tech-cloud">
+          <h2 className="section-title">Technologies & Methodologies</h2>
+          <div className="tag-container" style={{ justifyContent: 'center' }}>
             {biometricsResearch.technologies.map((tech, index) => (
-              <span key={index} className="tech-tag">
+              <span key={index} className="tag tag-outline">
                 {tech}
               </span>
             ))}
@@ -87,13 +97,14 @@ const BiometricsResearch = () => {
         </div>
       </section>
 
-      {/* Back to Home Button */}
+      {/* Back to Home Button - using global styles */}
       <div className="back-home">
-        <a href="/" className="back-button">
+        <Link to="/" className="back-button">
           <span>←</span> Back to Home
-        </a>
+        </Link>
       </div>
     </div>
   );
 };
+
 export default BiometricsResearch;

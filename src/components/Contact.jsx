@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { contactInfo } from '../data/contact';
 import './Contact.css';
 
 const Contact = () => {
   return (
-    <div className="contact-page">
-      {/* Hero Section */}
+    <div>
+      {/* Hero Section - using global styles */}
       <section className="page-hero">
         <div className="hero-background"></div>
         <div className="hero-content">
@@ -16,16 +17,16 @@ const Contact = () => {
       </section>
 
       {/* Contact Information */}
-      <section className="contact-info-section">
+      <section className="starfield">
         <div className="container">
-          <div className="contact-grid">
-            <div className="contact-method">
+          <div className="grid grid-auto">
+            <div className="card contact-method">
               <div className="contact-icon">✉️</div>
               <h3>Email</h3>
               <a href={`mailto:${contactInfo.email}`} className="contact-link">{contactInfo.email}</a>
             </div>
             
-            <div className="contact-method">
+            <div className="card contact-method">
               <div className="contact-icon">💼</div>
               <h3>LinkedIn</h3>
               <a href={contactInfo.linkedin} target="_blank" rel="noopener noreferrer" className="contact-link">
@@ -33,7 +34,7 @@ const Contact = () => {
               </a>
             </div>
             
-            <div className="contact-method">
+            <div className="card contact-method">
               <div className="contact-icon">🐙</div>
               <h3>GitHub</h3>
               <a href={contactInfo.github} target="_blank" rel="noopener noreferrer" className="contact-link">
@@ -45,10 +46,10 @@ const Contact = () => {
       </section>
 
       {/* Professional Summary */}
-      <section className="summary-section">
+      <section>
         <div className="container">
-          <h2>Professional Summary</h2>
-          <div className="summary-card">
+          <h2 className="section-title">Professional Summary</h2>
+          <div className="card card-detail summary-card">
             <p>
               {contactInfo.professionalSummary.description}
             </p>
@@ -64,11 +65,11 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Back to Home Button */}
+      {/* Back to Home Button - using global styles */}
       <div className="back-home">
-        <a href="/" className="back-button">
+        <Link to="/" className="back-button">
           <span>←</span> Back to Home
-        </a>
+        </Link>
       </div>
     </div>
   );

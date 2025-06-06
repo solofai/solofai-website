@@ -1,7 +1,7 @@
 // src/App.jsx
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import logo from '../public/solofai-icon.svg';
+import logo from '../public/solofai-icon.svg'; // Move logo to src/assets folder
 import Navigation from './components/Navigation';
 import Homepage from './components/Homepage';
 import AcademicFoundation from './components/AcademicFoundation';
@@ -9,7 +9,7 @@ import MLEngineering from './components/MLEngineering';
 import BiometricsResearch from './components/BiometricsResearch';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
-import './App.css';
+import './App.css'; // Keep for app-specific styles only
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -28,10 +28,10 @@ function App() {
         >
           ☰
         </button>
-        <div className="mobile-logo-container">
+        <Link to="/" className="mobile-logo-container">
           <img src={logo} alt="Sol of AI" className="mobile-icon" />
           <span className="mobile-logo">Sol of AI</span>
-        </div>
+        </Link>
       </header>
 
       {/* Mobile Nav Drawer */}
@@ -57,7 +57,7 @@ function App() {
 
       {/* Footer */}
       <footer className="app-footer">
-        <div className="footer-container">
+        <div className="container footer-container">
           {/* Disclaimer Section */}
           <div className="footer-disclaimer">
             <p>

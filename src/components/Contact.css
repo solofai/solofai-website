@@ -1,154 +1,11 @@
-/* Contact Page Styles */
-.contact-page {
-  min-height: 100vh;
-  background: var(--cosmic-black);
-  color: var(--star-white);
-}
+/* src/components/Contact.css */
+/* Only Contact-specific styles */
 
-/* Reuse navigation styles */
-.nav-bar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(5, 5, 5, 0.9);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
-  z-index: 1000;
-  padding: 1rem 0;
-}
-
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--sun-gold);
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.nav-logo:hover {
-  text-shadow: 0 0 20px var(--sun-gold);
-}
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
-}
-
-.nav-link {
-  color: var(--star-white);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--sun-gold);
-  transition: width 0.3s ease;
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
-
-/* Page Hero */
-.page-hero {
-  margin-top: 60px;
-  padding: 4rem 0;
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, var(--midnight-blue) 0%, var(--deep-purple) 50%, var(--midnight-blue) 100%);
-}
-
-.hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0.2;
-  background-image: 
-    radial-gradient(circle at 25% 25%, var(--sun-gold) 0%, transparent 30%),
-    radial-gradient(circle at 75% 75%, var(--sun-orange) 0%, transparent 30%);
-}
-
-.hero-content {
-  position: relative;
-  text-align: center;
-  z-index: 2;
-}
-
-.icon-large {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  display: inline-block;
-  animation: bounce 2s ease-in-out infinite;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
-
-.page-hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  background: linear-gradient(45deg, var(--sun-gold), var(--glow-yellow));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero-description {
-  font-size: 1.2rem;
-  max-width: 800px;
-  margin: 0 auto;
-  opacity: 0.9;
-}
-
-/* Contact Information Section */
-.contact-info-section {
-  padding: 4rem 0;
-  background: var(--cosmic-black);
-}
-
-.container {
-  max-width: none !important;
-  width: 100% !important;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
+/* ============================= */
+/* Contact Method Cards          */
+/* ============================= */
 .contact-method {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 215, 0, 0.2);
-  border-radius: 20px;
-  padding: 2.5rem 2rem;
   text-align: center;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
 }
 
 .contact-method::before {
@@ -159,18 +16,13 @@
   width: 300%;
   height: 300%;
   background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 60%);
-  transition: all 0.5s ease;
+  transition: all var(--transition-slow);
+  pointer-events: none;
 }
 
 .contact-method:hover::before {
   top: -150%;
   left: -150%;
-}
-
-.contact-method:hover {
-  transform: translateY(-5px);
-  border-color: var(--sun-gold);
-  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
 }
 
 .contact-icon {
@@ -180,16 +32,15 @@
 }
 
 .contact-method h3 {
-  color: var(--sun-gold);
-  margin-bottom: 1rem;
   font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .contact-link {
   color: var(--star-white);
   text-decoration: none;
   font-size: 1.1rem;
-  transition: all 0.3s ease;
+  transition: all var(--transition-base);
   display: inline-block;
   position: relative;
 }
@@ -202,7 +53,7 @@
   width: 0;
   height: 2px;
   background: var(--sun-gold);
-  transition: width 0.3s ease;
+  transition: width var(--transition-base);
 }
 
 .contact-link:hover {
@@ -213,52 +64,19 @@
   width: 100%;
 }
 
-/* Professional Summary Section */
-.summary-section {
-  padding: 4rem 0;
-  background: linear-gradient(180deg, var(--cosmic-black) 0%, var(--midnight-blue) 100%);
-}
-
-.summary-section h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: var(--sun-gold);
-}
-
+/* ============================= */
+/* Summary Card Specific         */
+/* ============================= */
 .summary-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid rgba(255, 215, 0, 0.3);
-  border-radius: 20px;
-  padding: 3rem;
   max-width: 800px;
   margin: 0 auto;
-  position: relative;
-}
-
-.summary-card::before {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  right: -1px;
-  bottom: -1px;
-  background: linear-gradient(45deg, var(--sun-gold), transparent, var(--sun-orange), transparent);
-  border-radius: 20px;
-  opacity: 0;
-  z-index: -1;
-  transition: opacity 0.3s ease;
-}
-
-.summary-card:hover::before {
-  opacity: 0.5;
+  text-align: center;
 }
 
 .summary-card p {
   font-size: 1.2rem;
   line-height: 1.8;
   margin-bottom: 2rem;
-  text-align: center;
 }
 
 .skills-highlight {
@@ -268,9 +86,8 @@
 }
 
 .skills-highlight h4 {
-  color: var(--sun-gold);
-  margin-bottom: 1rem;
   font-size: 1.3rem;
+  margin-bottom: 1rem;
 }
 
 .skills-highlight ul {
@@ -292,118 +109,4 @@
   position: absolute;
   left: 0;
   top: 0.5rem;
-}
-
-/* Back Button */
-.back-home {
-  text-align: center;
-  padding: 3rem 0;
-}
-
-.back-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 2rem;
-  background: transparent;
-  border: 2px solid var(--sun-gold);
-  border-radius: 50px;
-  color: var(--star-white);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 1.1rem;
-}
-
-.back-button:hover {
-  background: var(--sun-gold);
-  color: var(--cosmic-black);
-  transform: translateX(-5px);
-}
-
-.back-button span {
-  font-size: 1.5rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-  
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .skills-highlight ul {
-    grid-template-columns: 1fr;
-  }
-  /* —— SUN —— */
-.orbit-center.sun {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    var(--sun-gold) 0%,
-    var(--sun-orange) 70%,
-    var(--sun-coral) 100%
-  );
-  box-shadow:
-    0 0 80px var(--glow-yellow),
-    0 0 140px var(--sun-gold),
-    0 0 200px rgba(255,107,107,0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--cosmic-black);
-  font-size: 2rem;
-  font-weight: bold;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-}
-
-/* —— PLANETS —— */
-.orbit-center.planet {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(255,243,178,0.4) 0%,
-    rgba(255,215,0,0.1) 80%
-  );
-  border: 3px solid var(--sun-gold);
-  box-shadow: 0 0 20px var(--glow-yellow);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--cosmic-black);
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-/* —— MOONS —— */
-.orbit-item.moon {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(255,243,178,0.6) 0%,
-    rgba(255,215,0,0.2) 70%
-  );
-  border: 2px solid var(--sun-gold);
-  box-shadow: 0 0 10px var(--glow-yellow);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--cosmic-black);
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-
-/* —— TIDY UP UNIVERSE SIZE —— */
-.tech-universe {
-  min-height: 600px; /* pull this down so it’s not too tall */
-}
-
 }
