@@ -19,7 +19,7 @@
   width: 100%;
   max-width: none;
   margin: 0;
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 /* Logo with Icon */
@@ -32,8 +32,8 @@
 }
 
 .nav-icon {
-  height: 35px;
-  width: 35px;
+  height: 50px;
+  width: 50px;
   transition: transform 0.3s ease;
 }
 
@@ -45,7 +45,8 @@
 }
 
 .nav-logo-link:hover .nav-icon {
-  transform: rotate(180deg);
+  /* transform: rotate(180deg);*/
+  transform: scale(1.5)
 }
 
 .nav-logo-link:hover .nav-logo-text {
