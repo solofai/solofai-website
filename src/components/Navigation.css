@@ -86,14 +86,16 @@
   .nav-links {
     display: none;
   }
-  
+  /*
   .nav-icon {
-    height: 30px;
-    width: 30px;
+    height: 45px;
+    width: 45px;
+    transition: transform 0.3s ease;
   }
   
   .nav-logo-text {
     font-size: 1.25rem;
   }
+  */
 }
 
