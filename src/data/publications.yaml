@@ -1,0 +1,24 @@
+# Each entry needs a unique id. Lists are sorted by year (newest first) at build time.
+- id: ictai-2026-keystroke-identity-linkage
+  authors: [A. Kuruvilla, L. Pickering, I. Rentala, R. Kumar]
+  title: Context-Robust Identity Linkage in Social Media via Keystroke Dynamics
+  venue: 38th IEEE International Conference on Tools with Artificial Intelligence (ICTAI)
+  year: 2026
+  kind: conference
+  status: accepted
+
+- id: ms-thesis-2019-storm
+  authors: [L. D. Pickering]
+  title: "Analyzing and Assuring Missions and Systems by STORM: Introducing and Analyzing Systems-Theoretic and Technical Operational Risk Management (STORM)"
+  venue: M.S. thesis, Syracuse University
+  year: 2019
+  kind: thesis
+  url: https://surface.syr.edu/thesis/317/
+
+- id: nf-2010-diii-d-ion-loss
+  authors: [Y. B. Zhu, W. W. Heidbrink, L. D. Pickering]
+  title: Phenomenology of Energetic-Ion Loss from the DIII-D Tokamak
+  venue: Nuclear Fusion, vol. 50, no. 8, article 084024
+  year: 2010
+  kind: journal
+  doi: 10.1088/0029-5515/50/8/084024

@@ -1,0 +1,52 @@
+# Dates are YYYY-MM. Omit `end` for a current role.
+- id: aisa
+  role: Founder & CEO
+  org: AI Security Assurance
+  location: Virginia
+  start: 2025-10
+  highlights:
+    - Lead an early-stage R&D company building AI-driven system security engineering tools grounded in STPA-Sec and formal methods.
+
+- id: chip-scan
+  role: ML Engineer, Cyber Hardware Security & Assurance
+  org: Chip Scan
+  url: https://chipscan.us
+  location: Remote
+  start: "2022"
+  end: 2025-10
+  highlights:
+    - Researched and developed ML models for hardware analysis.
+    - Managed 50+ graph neural network models on datasets from 10k to 1.4M graphs.
+
+- id: geon
+  role: Machine Learning Engineer, Signal Demodulation
+  org: Geon Technologies
+  url: https://geontech.com/
+  location: Columbia, MD
+  start: 2021-10
+  end: 2022-04
+  highlights:
+    - Built Transformer, LSTM, and BiRNN models for signal demodulation on synthetic sequential data, with FFT-based transformation pipelines.
+
+- id: afrl
+  role: Associate Computer Scientist, Computer Vision & Program Management
+  org: Air Force Research Laboratory
+  url: https://www.afrl.af.mil/RI/
+  location: Rome, NY
+  start: 2019-09
+  end: 2021-08
+  highlights:
+    - Researched object detection (YOLO, Faster R-CNN) and GAN-based synthetic data for extracting text overlays from video.
+    - Competed for funding and coordinated with joint-force partners on warfighter safety.
+
+- id: syracuse-gra
+  role: Graduate Research Assistant, Mission Assurance
+  org: Syracuse University, College of Engineering and Computer Science
+  url: https://ecs.syracuse.edu/
+  location: Syracuse, NY
+  start: 2016-12
+  end: 2019-05
+  highlights:
+    - Developed STORM, extending STPA-Sec to link stakeholder security definitions to system-level vulnerability analysis.
+    - Demonstrated certified security by design with HOL theorem proving and secure state machines.
+    - Collaborated with Assured Information Security on a Haskell-based prototype automating formal verification of a UAV mission.

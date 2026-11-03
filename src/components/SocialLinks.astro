@@ -1,0 +1,26 @@
+---
+import { SOCIAL } from '@/config';
+---
+
+<ul class="social">
+  {
+    SOCIAL.map(({ label, href }) => (
+      <li>
+        <a href={href} rel={href.startsWith('http') ? 'noopener' : undefined}>
+          {label}
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-4);
+    list-style: none;
+    padding: 0;
+    font-family: var(--font-sans);
+  }
+</style>

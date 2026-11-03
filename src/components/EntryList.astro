@@ -1,0 +1,13 @@
+---
+/** Unstyled list container for Entry rows; closes the last row with a rule. */
+---
+
+<ul class="entry-list"><slot /></ul>
+
+<style>
+  .entry-list {
+    list-style: none;
+    padding: 0;
+    border-bottom: 1px solid var(--color-rule);
+  }
+</style>

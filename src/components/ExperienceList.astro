@@ -1,0 +1,45 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Entry from '@/components/Entry.astro';
+import EntryList from '@/components/EntryList.astro';
+import { formatRange } from '@/lib/format';
+
+interface Props {
+  items: CollectionEntry<'experience'>[];
+}
+const { items } = Astro.props;
+---
+
+<EntryList>
+  {
+    items.map(({ data }) => (
+      <Entry>
+        <span slot="aside">{formatRange(data.start, data.end)}</span>
+        <h3>{data.role}</h3>
+        <p class="meta">
+          {data.url ? <a href={data.url}>{data.org}</a> : data.org}, {data.location}
+        </p>
+        {data.highlights.length > 0 && (
+          <ul class="highlights">
+            {data.highlights.map((h) => (
+              <li>{h}</li>
+            ))}
+          </ul>
+        )}
+      </Entry>
+    ))
+  }
+</EntryList>
+
+<style>
+  h3 {
+    font-size: var(--step-0);
+  }
+  .highlights {
+    padding-inline-start: 1.1em;
+    list-style: disc;
+  }
+  .highlights li + li {
+    margin-block-start: var(--space-1);
+  }
+</style>

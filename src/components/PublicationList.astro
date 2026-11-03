@@ -1,0 +1,56 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Entry from '@/components/Entry.astro';
+import EntryList from '@/components/EntryList.astro';
+import { doiUrl, isSiteOwner } from '@/lib/format';
+
+interface Props {
+  items: CollectionEntry<'publications'>[];
+}
+const { items } = Astro.props;
+---
+
+<EntryList>
+  {
+    items.map(({ data }) => {
+      const href = data.doi ? doiUrl(data.doi) : data.url;
+      return (
+        <Entry>
+          <span slot="aside">
+            {data.year}
+            {data.status === 'accepted' && <br />}
+            {data.status === 'accepted' && 'Accepted'}
+          </span>
+          <h3 class="title">{href ? <a href={href}>{data.title}</a> : data.title}</h3>
+          <p class="authors">
+            {data.authors.map((author, i) => (
+              <>
+                {i > 0 && ', '}
+                {isSiteOwner(author) ? <strong>{author}</strong> : author}
+              </>
+            ))}
+          </p>
+          <p class="meta">
+            <i>{data.venue}</i>
+            {data.doi && <>. DOI {data.doi}</>}
+          </p>
+        </Entry>
+      );
+    })
+  }
+</EntryList>
+
+<style>
+  .title {
+    font-family: var(--font-serif);
+    font-size: var(--step-0);
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .authors {
+    font-size: var(--step--1);
+  }
+  strong {
+    font-weight: 650;
+  }
+</style>

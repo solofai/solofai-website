@@ -1,0 +1,24 @@
+---
+import SocialLinks from '@/components/SocialLinks.astro';
+import { SITE } from '@/config';
+
+// Evaluated at build time; a static site has no request-time clock.
+const year = new Date().getUTCFullYear();
+---
+
+<footer id="contact" class="wrap site-footer stack">
+  <p>Email is the fastest way to reach me.</p>
+  <SocialLinks />
+  <p class="meta">
+    © {year} {SITE.name}. {SITE.domain} is a personal site and is not affiliated with
+    Sol Rashidi's <cite>The Sol of AI</cite>.
+  </p>
+</footer>
+
+<style>
+  .site-footer {
+    --flow: var(--space-3);
+    padding-block: var(--space-5);
+    border-top: 1px solid var(--color-rule);
+  }
+</style>

@@ -1,0 +1,83 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ControlLoop from '@/components/ControlLoop.astro';
+import Section from '@/components/Section.astro';
+import WorkList from '@/components/WorkList.astro';
+import PostList from '@/components/PostList.astro';
+import PublicationList from '@/components/PublicationList.astro';
+import { getPosts, getPublications, getWork } from '@/lib/content';
+
+const RECENT_POST_COUNT = 3;
+
+const featured = (await getWork()).filter((w) => w.data.featured);
+const posts = (await getPosts()).slice(0, RECENT_POST_COUNT);
+const publications = await getPublications();
+---
+
+<BaseLayout>
+  <section class="intro" aria-labelledby="intro-title">
+    <div class="intro__text stack">
+      <h1 id="intro-title">Lori Pickering</h1>
+      <p class="lead">
+        I build and study AI systems that need to be trustworthy, working across machine
+        learning, systems-theoretic security analysis, and formal verification.
+      </p>
+      <p>
+        My background runs from plasma physics and forensic science to graph neural networks
+        for hardware security. I'm currently the founder and CEO of an early-stage security
+        engineering company.
+      </p>
+      <p><a href="/about/">More about my background</a></p>
+    </div>
+    <ControlLoop />
+  </section>
+
+  {
+    featured.length > 0 && (
+      <Section title="Selected work" id="work">
+        <WorkList items={featured} />
+      </Section>
+    )
+  }
+
+  {
+    posts.length > 0 && (
+      <Section title="Recent writing" id="writing">
+        <PostList items={posts} />
+      </Section>
+    )
+  }
+
+  <Section title="Publications" id="publications">
+    <PublicationList items={publications} />
+  </Section>
+
+</BaseLayout>
+
+<style>
+  .intro {
+    display: grid;
+    gap: var(--space-5);
+    align-items: center;
+    padding-block: var(--space-4) var(--space-3);
+  }
+  .intro__text {
+    --flow: var(--space-3);
+    max-width: 38rem;
+  }
+  h1 {
+    font-size: var(--step-4);
+    font-weight: 750;
+    letter-spacing: -0.025em;
+    line-height: 1;
+  }
+  .lead {
+    font-size: var(--step-1);
+    line-height: 1.45;
+  }
+  @media (min-width: 60rem) {
+    .intro {
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    }
+  }
+</style>

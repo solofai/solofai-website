@@ -1,7 +1,6 @@
 node_modules/
 dist/
-.env
+.astro/
 .firebase/
+.DS_Store
 *.log
-*/.DS_Store
-.DS_Store.DS_Store

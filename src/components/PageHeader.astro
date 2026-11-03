@@ -1,0 +1,30 @@
+---
+/** Title block for inner pages: optional meta line, h1, and a short lead. */
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+const hasMeta = Astro.slots.has('meta');
+---
+
+<header class="page-header stack">
+  {hasMeta && <p class="meta"><slot name="meta" /></p>}
+  <h1>{title}</h1>
+  <p class="lead"><slot /></p>
+</header>
+
+<style>
+  .page-header {
+    --flow: var(--space-3);
+    max-width: var(--measure);
+    padding-block: var(--space-4) var(--space-5);
+  }
+  h1 {
+    font-size: var(--step-3);
+  }
+  .lead {
+    font-size: var(--step-1);
+    line-height: 1.45;
+    color: var(--color-ink-muted);
+  }
+</style>

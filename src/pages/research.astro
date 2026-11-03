@@ -1,0 +1,53 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+import Section from '@/components/Section.astro';
+import PublicationList from '@/components/PublicationList.astro';
+import { getPublications } from '@/lib/content';
+
+const publications = await getPublications();
+---
+
+<BaseLayout
+  title="Research"
+  description="Publications by Lori Pickering in behavioral biometrics, systems-theoretic mission assurance, and plasma physics."
+>
+  <PageHeader title="Research">
+    Behavioral biometrics, systems-theoretic mission assurance, and plasma physics.
+  </PageHeader>
+
+  <Section title="Publications" id="publications">
+    <PublicationList items={publications} />
+  </Section>
+
+  <Section title="Areas" id="areas" indent>
+    <dl class="areas">
+      <dt>Behavioral biometrics</dt>
+      <dd>
+        Keystroke dynamics for identity linkage and fake-profile detection on social media.
+        Related tools are listed under <a href="/work/keystroke-dynamics/">Work</a>.
+      </dd>
+      <dt>Systems-theoretic mission assurance</dt>
+      <dd>
+        STORM, introduced in my M.S. thesis, extends STPA-Sec to connect stakeholder security
+        goals to system-level vulnerability analysis, with formal verification in HOL.
+      </dd>
+      <dt>Plasma physics</dt>
+      <dd>Energetic-ion loss measurements on the DIII-D tokamak.</dd>
+    </dl>
+  </Section>
+</BaseLayout>
+
+<style>
+  .areas {
+    max-width: var(--measure);
+    margin: 0;
+  }
+  dt {
+    font-family: var(--font-sans);
+    font-weight: 650;
+  }
+  dd {
+    margin: var(--space-1) 0 var(--space-4);
+  }
+</style>

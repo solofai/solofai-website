@@ -1,8 +1,0 @@
-/* src/index.css */
-/* This file can be removed or kept minimal since globals.css handles everything */
-
-/* If you want to keep it for any Vite-specific defaults, here's a minimal version: */
-#root {
-  width: 100%;
-  min-height: 100vh;
-}

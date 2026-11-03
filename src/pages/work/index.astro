@@ -1,0 +1,15 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+import WorkList from '@/components/WorkList.astro';
+import { getWork } from '@/lib/content';
+
+const work = await getWork();
+---
+
+<BaseLayout title="Work" description="Tools, prototypes, and research projects by Lori Pickering.">
+  <PageHeader title="Work">
+    Tools, prototypes, and research projects, each with its current status.
+  </PageHeader>
+  <WorkList items={work} />
+</BaseLayout>

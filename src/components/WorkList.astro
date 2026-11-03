@@ -1,0 +1,30 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Entry from '@/components/Entry.astro';
+import EntryList from '@/components/EntryList.astro';
+import TagList from '@/components/TagList.astro';
+import { WORK_STATUS_LABEL } from '@/lib/format';
+
+interface Props {
+  items: CollectionEntry<'work'>[];
+}
+const { items } = Astro.props;
+---
+
+<EntryList>
+  {
+    items.map(({ id, data }) => (
+      <Entry>
+        <span slot="aside">
+          {WORK_STATUS_LABEL[data.status]}
+          {data.draft && ' (draft)'}
+        </span>
+        <h3>
+          <a href={`/work/${id}/`}>{data.title}</a>
+        </h3>
+        <p>{data.summary}</p>
+        <TagList tags={data.tags} />
+      </Entry>
+    ))
+  }
+</EntryList>

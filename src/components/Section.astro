@@ -1,0 +1,35 @@
+---
+/**
+ * Titled page section. The heading aligns with the content column of Entry
+ * rows; set `indent` for prose bodies so they align with it too (Entry lists
+ * manage their own margin column and should not be indented).
+ */
+interface Props {
+  title: string;
+  id: string;
+  indent?: boolean;
+}
+const { title, id, indent = false } = Astro.props;
+---
+
+<section class="section" aria-labelledby={`${id}-title`}>
+  <h2 id={`${id}-title`}>{title}</h2>
+  <div class:list={['section__body', { 'is-indented': indent }]}>
+    <slot />
+  </div>
+</section>
+
+<style>
+  .section {
+    margin-block-start: var(--space-6);
+  }
+  h2 {
+    margin-block-end: var(--space-3);
+  }
+  @media (min-width: 52rem) {
+    h2,
+    .is-indented {
+      margin-inline-start: calc(var(--margin-col) + var(--space-4));
+    }
+  }
+</style>

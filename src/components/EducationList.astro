@@ -1,0 +1,31 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Entry from '@/components/Entry.astro';
+import EntryList from '@/components/EntryList.astro';
+
+interface Props {
+  items: CollectionEntry<'education'>[];
+}
+const { items } = Astro.props;
+---
+
+<EntryList>
+  {
+    items.map(({ data }) => (
+      <Entry>
+        <span slot="aside">{data.year}</span>
+        <h3>{data.degree}</h3>
+        <p class="meta">
+          {data.institution}
+          {data.focus && <>. {data.focus}</>}
+        </p>
+      </Entry>
+    ))
+  }
+</EntryList>
+
+<style>
+  h3 {
+    font-size: var(--step-0);
+  }
+</style>

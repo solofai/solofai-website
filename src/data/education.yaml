@@ -1,0 +1,14 @@
+- id: ms-cs
+  degree: M.S. Computer Science
+  institution: Syracuse University
+  year: 2019
+  focus: Formal theorem proving and mission assurance
+- id: ms-bfs
+  degree: M.S. Biomedical Forensic Science
+  institution: Syracuse University
+  year: 2017
+- id: bs-physics-acm
+  degree: B.S. Physics and B.S. Applied Computational Mathematics
+  institution: University of California, Irvine
+  year: 2006
+  focus: Plasma fusion physics

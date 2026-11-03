@@ -1,0 +1,119 @@
+---
+/**
+ * Hand-built SVG of an STPA control structure: a controller holding a
+ * process model issues control actions to a controlled process and updates
+ * its model from feedback. Inline SVG (not an <img>) so it inherits theme
+ * colors via CSS variables and adds no network request.
+ */
+---
+
+<figure class="control-loop">
+  <svg viewBox="0 0 380 290" role="img" aria-labelledby="loop-title loop-desc">
+    <title id="loop-title">Control structure</title>
+    <desc id="loop-desc">
+      A controller containing a process model sends control actions down to a controlled
+      process. Feedback from the process returns up to the controller.
+    </desc>
+    <defs>
+      <marker id="arrow-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0 0 L10 5 L0 10 z" class="fill-ink"></path>
+      </marker>
+    </defs>
+
+    <!-- Controller -->
+    <rect x="70" y="14" width="240" height="96" class="box"></rect>
+    <text x="190" y="40" class="label">Controller</text>
+    <rect x="120" y="54" width="140" height="38" class="box box--inner"></rect>
+    <text x="190" y="78" class="label label--small">Process model</text>
+
+    <!-- Controlled process -->
+    <rect x="70" y="190" width="240" height="72" class="box"></rect>
+    <text x="190" y="231" class="label">Controlled process</text>
+
+    <!-- Control actions: controller down to process -->
+    <path d="M110 110 V188" class="line" marker-end="url(#arrow-ink)"></path>
+    <text x="100" y="153" class="label label--small label--end">Control actions</text>
+
+    <!-- Feedback: process up to controller -->
+    <path d="M270 190 V122" class="line line--feedback" pathLength="1"></path>
+    <!-- Separate arrowhead so it appears when the line finishes drawing, not before -->
+    <path d="M262 124 L270 111 L278 124 z" class="fill-accent arrowhead"></path>
+    <text x="280" y="153" class="label label--small label--start">Feedback</text>
+  </svg>
+  <figcaption class="meta">
+    A control structure, the basic unit of System-Theoretic Process Analysis (STPA).
+  </figcaption>
+</figure>
+
+<style>
+  .control-loop {
+    margin: 0;
+    max-width: 26rem;
+  }
+  svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+  .box {
+    fill: none;
+    stroke: var(--color-ink);
+    stroke-width: 1.5;
+  }
+  .box--inner {
+    stroke: var(--color-ink-muted);
+    stroke-dasharray: 4 3;
+  }
+  .line {
+    fill: none;
+    stroke: var(--color-ink);
+    stroke-width: 1.5;
+  }
+  .line--feedback {
+    stroke: var(--color-accent-strong);
+    stroke-width: 2.5;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: draw 900ms 300ms ease-out forwards;
+  }
+  .fill-ink {
+    fill: var(--color-ink);
+  }
+  .fill-accent {
+    fill: var(--color-accent-strong);
+  }
+  .arrowhead {
+    opacity: 0;
+    animation: appear 150ms 1150ms forwards;
+  }
+  .label {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 600;
+    fill: var(--color-ink);
+    text-anchor: middle;
+  }
+  .label--small {
+    font-size: 13px;
+    font-weight: 450;
+  }
+  .label--end {
+    text-anchor: end;
+  }
+  .label--start {
+    text-anchor: start;
+  }
+  figcaption {
+    margin-block-start: var(--space-2);
+  }
+  @keyframes appear {
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+</style>

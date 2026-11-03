@@ -1,0 +1,40 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+import Section from '@/components/Section.astro';
+import ExperienceList from '@/components/ExperienceList.astro';
+import EducationList from '@/components/EducationList.astro';
+import { getEducation, getExperience } from '@/lib/content';
+
+const [experience, education] = await Promise.all([getExperience(), getEducation()]);
+---
+
+<BaseLayout title="About" description="Background, experience, and education of Lori Pickering.">
+  <PageHeader title="About">
+    From plasma physics to AI security engineering.
+  </PageHeader>
+
+  <div class="prose stack">
+    <p>
+      I started in physics at UC Irvine, studying energetic-ion loss in fusion plasmas. A
+      master's in biomedical forensic science followed, then a master's in computer science
+      at Syracuse, where I developed STORM, a systems-theoretic method for analyzing and
+      assuring missions, and worked with formal verification in HOL.
+    </p>
+    <p>
+      Since then I have applied machine learning to computer vision at the Air Force Research
+      Laboratory, signal demodulation at Geon Technologies, and graph neural networks for
+      hardware security at Chip Scan. In October 2025 I became the full-time founder and CEO
+      of an early-stage company building AI-driven security engineering tools.
+    </p>
+  </div>
+
+  <Section title="Experience" id="experience">
+    <ExperienceList items={experience} />
+  </Section>
+
+  <Section title="Education" id="education">
+    <EducationList items={education} />
+  </Section>
+
+</BaseLayout>

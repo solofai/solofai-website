@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Entry from '@/components/Entry.astro';
+import EntryList from '@/components/EntryList.astro';
+import { formatDate } from '@/lib/format';
+
+interface Props {
+  items: CollectionEntry<'writing'>[];
+}
+const { items } = Astro.props;
+---
+
+<EntryList>
+  {
+    items.map(({ id, data }) => (
+      <Entry>
+        <time slot="aside" datetime={data.date.toISOString()}>
+          {formatDate(data.date)}
+        </time>
+        <h3>
+          <a href={`/writing/${id}/`}>{data.title}</a>
+        </h3>
+        <p>{data.summary}</p>
+      </Entry>
+    ))
+  }
+</EntryList>
