@@ -62,7 +62,7 @@ const Homepage = () => {
           </h1>
           <p className="hero-subtitle">Where Sol Meets Silicon</p>
           <p className="hero-description">
-            Machine Learning Engineer • AI Researcher • Digital Creator
+            Founder • ML Engineer • AI Researcher
           </p>
           <div className="hero-cta">
             <button className="cta-primary" onClick={() => handleNavigation('/engineering')}>
@@ -96,8 +96,8 @@ const Homepage = () => {
               <div className="icon-wrapper">
                 <div className="icon">🔒</div>
               </div>
-              <h3>Machine Learning Engineer</h3>
-              <p>Specializing in cyber hardware security and assurance, developing advanced ML models for critical infrastructure protection</p>
+              <h3>Engineering & Leadership</h3>
+              <p>Founder and CEO of an AI-driven security engineering startup; previously ML engineering for hardware security, signals, and computer vision</p>
               <div className="arrow-indicator">→</div>
             </div>
             <div className="card card-nav" onClick={() => handleNavigation('/research')}>
@@ -105,7 +105,7 @@ const Homepage = () => {
                 <div className="icon">🧬</div>
               </div>
               <h3>Biometrics Research</h3>
-              <p>Leading innovative research in biometric applications for data science and AI</p>
+              <p>Keystroke-dynamics research for identity linkage and fake-profile detection; paper accepted at IEEE ICTAI 2026</p>
               <div className="arrow-indicator">→</div>
             </div>
           </div>
@@ -119,7 +119,7 @@ const Homepage = () => {
           <div className="grid grid-auto">
             <div className="card card-nav card-glow" onClick={() => handleNavigation('/engineering')}>
               <h3>Cyber Hardware Security</h3>
-              <p>Developing ML models for hardware analysis and threat detection</p>
+              <p>ML models for hardware analysis and threat detection</p>
               <span className="tag project-tag">Machine Learning</span>
               <div className="arrow-indicator">→</div>
             </div>

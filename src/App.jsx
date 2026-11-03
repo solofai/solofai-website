@@ -77,10 +77,10 @@ function App() {
           {/* Original Footer Content */}
           <div className="footer-info">
             <p className="footer-updated">
-              Last updated: May 30, 2025
+              Last updated: November 2, 2026
             </p>
             <p className="footer-credit">
-              © 2025 Sol of AI • 
+              © {new Date().getFullYear()} Sol of AI • 
               <a href="mailto:sol@solofai.com">sol@solofai.com</a>
             </p>
           </div>

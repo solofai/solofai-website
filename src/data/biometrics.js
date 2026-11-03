@@ -21,6 +21,14 @@ export const biometricsResearch = {
     'Machine Learning',
     'Deep Learning',
   ],
+  publications: [
+    {
+      title: 'Context-Robust Identity Linkage in Social Media via Keystroke Dynamics',
+      authors: 'A. Kuruvilla, L. Pickering, I. Rentala, & R. Kumar',
+      venue: '38th IEEE International Conference on Tools with Artificial Intelligence (ICTAI), accepted',
+      year: 2026
+    }
+  ],
   related_research: [
     {
       title: 'Keystroke Dynamics Against Academic Dishonesty in the Age of LLMs',

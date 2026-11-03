@@ -1,20 +1,31 @@
 // src/data/machinelearning.js
 export const mlEngineering = {
-  title: "Machine Learning Engineer",
+  title: "Engineering & Leadership",
   icon: "🔒",
-  role: "ML Engineer - Cyber Hardware Security & Assurance",
-  company: "Chip Scan",
-  website: "chipscan.us",
-  location: "Remote",
-  duration: "2022 - Present",
+  role: "Founder & CEO",
+  company: "AI Security Assurance",
+  location: "Virginia",
+  duration: "Oct 2025 - Present",
   responsibilities: [
-    "Research, analyze, & develop ML models for hardware analysis",
-    "Manage 50+ models on various datasets ranging from 10k to 1.4M graphs"
+    "Lead an early-stage R&D company building AI-driven system security engineering tools",
+    "Direct research grounded in STPA-Sec and formal methods"
   ],
-  technologies: ["Python", "Jupyter", "PyTorch", "PyG", "Polars", "Linux", "Bash","graph data", "mlflow",
-                "ML/DL", "GNNs", "Sklearn", "NumPy", "Pandas", "Matplotlib","Nvidia GPUs", "Docker", "Git"],
-  description: "Specializing in cyber hardware security and assurance, developing advanced ML models for critical infrastructure protection",
+  technologies: [],
+  description: "From ML research on hardware and signals to founding an AI-driven security engineering company",
   previous: [
+    {
+      role: "ML Engineer - Cyber Hardware Security & Assurance",
+      company: "Chip Scan",
+      website: "chipscan.us",
+      location: "Remote",
+      duration: "2022 - Oct 2025",
+      responsibilities: [
+        "Researched, analyzed, and developed ML models for hardware analysis",
+        "Managed 50+ models on datasets ranging from 10k to 1.4M graphs"
+      ],
+      technologies: ["Python", "Jupyter", "PyTorch", "PyG", "Polars", "Linux", "Bash", "graph data", "mlflow",
+                    "ML/DL", "GNNs", "Sklearn", "NumPy", "Pandas", "Matplotlib", "Nvidia GPUs", "Docker", "Git"]
+    },
     {
       role: "Machine Learning Engineer - Signal Demodulation Research",
       company: "Geon Technologies, LLC",

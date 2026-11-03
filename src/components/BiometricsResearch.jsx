@@ -45,6 +45,23 @@ const BiometricsResearch = () => {
         </div>
       </section>
 
+      {/* Publications Section */}
+      <section className="starfield">
+        <div className="container">
+          <h2 className="section-title">Publications</h2>
+          <div className="card">
+            <ul style={{ listStyle: 'none', padding: 0 }}>
+              {biometricsResearch.publications.map((paper, idx) => (
+                <li key={idx} style={{ marginBottom: '1.5rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                  <span style={{ position: 'absolute', left: 0, color: 'var(--sun-gold)' }}>▸</span>
+                  {paper.authors} ({paper.year}). <em>{paper.title}</em>. {paper.venue}.
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* Related Research Section */}
       <section className="starfield">
         <div className="container">
@@ -55,12 +72,14 @@ const BiometricsResearch = () => {
                 <li key={idx} style={{ marginBottom: '1.5rem', paddingLeft: '1.5rem', position: 'relative' }}>
                   <span style={{ position: 'absolute', left: 0, color: 'var(--sun-gold)' }}>▸</span>
                   {paper.authors} ({paper.year}). <em>{paper.title}</em>. {paper.venue}.{' '}
-                  <a href={paper.link} 
-                     target="_blank" 
-                     rel="noopener noreferrer"
-                     className="link-external">
-                    View Paper
-                  </a>
+                  {paper.link && (
+                    <a href={paper.link}
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       className="link-external">
+                      View Paper
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

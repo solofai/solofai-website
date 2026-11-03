@@ -9,7 +9,7 @@ export const academicFoundation = {
       year: "2019",
       focus: "Formal Theorem Proving & Mission Assurance",
       thesis: {
-        title: "Analyzing And Assuring Missions and Systems by STORM: Introducing and analyzing Systems-Theoretic and Technical Operational Risk Management (STORM)",
+        title: "Analyzing and Assuring Missions and Systems by STORM: Introducing and Analyzing Systems-Theoretic and Technical Operational Risk Management (STORM)",
         type: "Master's Thesis",
         link: "https://surface.syr.edu/thesis/317/"
       }
@@ -31,7 +31,7 @@ export const academicFoundation = {
         title: "Phenomenology of energetic-ion loss from the DIII-D tokamak",
         journal: "Nuclear Fusion",
         volume: "50",
-        formatted: 'Zhu, Y., Heidbrink, W.W., and Pickering, L.D. (2010). "Phenomenology of energetic-ion loss from the DIII-D tokamak." Nuclear Fusion 50.'
+        formatted: 'Y. B. Zhu, W. W. Heidbrink, and L. D. Pickering, "Phenomenology of Energetic-Ion Loss from the DIII-D Tokamak," <em>Nuclear Fusion</em>, vol. 50, no. 8, 084024, 2010. <a href="https://doi.org/10.1088/0029-5515/50/8/084024" target="_blank" rel="noopener noreferrer">doi:10.1088/0029-5515/50/8/084024</a>'
       }
     }
   ],

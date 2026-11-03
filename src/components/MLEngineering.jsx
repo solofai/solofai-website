@@ -6,10 +6,11 @@ import './MLEngineering.css';
 
 const MLEngineering = () => {
   // Combine current and previous experience technologies
-  const allTechs = [
+  // Set removes tags repeated across roles (e.g. Python, PyTorch)
+  const allTechs = [...new Set([
     ...mlEngineering.technologies,
     ...mlEngineering.previous.flatMap(exp => exp.technologies)
-  ];
+  ])];
   
   return (
     <div className="ml-page">
@@ -124,8 +125,8 @@ const MLEngineering = () => {
         <div className="container">
           <h2 className="section-title">Technologies & Tools</h2>
           <div className="tag-container" style={{ justifyContent: 'center' }}>
-            {allTechs.map((tech, index) => (
-              <span key={index} className="tag tag-outline tech-special">
+            {allTechs.map((tech) => (
+              <span key={tech} className="tag tag-outline tech-special">
                 {tech}
               </span>
             ))}
